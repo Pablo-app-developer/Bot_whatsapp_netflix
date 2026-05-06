@@ -66,6 +66,16 @@ app.get('/health', (req, res) => {
 // ============================================
 app.use('/webhook', whatsappRoutes);
 
+app.get('/test-groq', async (req, res) => {
+  try {
+    const { getAIResponse } = await import('./services/geminiService.js');
+    const result = await getAIResponse([{ role: 'user', content: 'hola' }]);
+    res.json({ ok: true, response: result });
+  } catch (err) {
+    res.json({ ok: false, error: err.message, stack: err.stack });
+  }
+});
+
 // ============================================
 // ERROR HANDLING
 // ============================================
