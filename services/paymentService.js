@@ -10,17 +10,8 @@ const BASE_URL = process.env.BASE_URL || 'https://streamflow.com';
  */
 export const getPaymentLink = async (serviceName, planName, customerPhone) => {
     try {
-        // En producción, aquí buscarías el precio real de tu DB
-        const mockPrices = {
-            'Netflix Móvil': 16900,
-            'Netflix Estándar': 26900,
-            'Netflix Premium': 38900,
-            'Max Estándar': 19900,
-            'Max Platino': 29900
-        };
-
-        const fullPlanName = `${serviceName} ${planName}`;
-        const amountInCents = (mockPrices[fullPlanName] || 20000) * 100;
+        // Todos los cursos tienen el mismo precio
+        const amountInCents = 10000 * 100;
 
         // Generar referencia única
         const reference = `SF-${Date.now()}-${customerPhone.slice(-4)}`;

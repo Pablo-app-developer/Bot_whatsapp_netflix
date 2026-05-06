@@ -2,23 +2,68 @@ import { logger } from '../utils/logger.js';
 
 // Catálogo de servicios
 const SERVICES = {
-    netflix: {
-        id: 'netflix',
-        name: 'Netflix',
-        keywords: ['netflix', 'netflx', 'flix'],
+    redes: {
+        id: 'redes',
+        name: 'Redes Sociales que Venden',
+        keywords: ['redes', 'redes sociales', 'contenido', 'instagram', 'tiktok', 'seguidores'],
         plans: {
-            movil: { id: 'movil', name: 'Móvil', price: 16900 },
-            estandar: { id: 'estandar', name: 'Estándar', price: 26900 },
-            premium: { id: 'premium', name: 'Premium', price: 38900 }
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
         }
     },
-    max: {
-        id: 'max',
-        name: 'Max',
-        keywords: ['max', 'hbo', 'hbomax', 'hbo max'],
+    finanzas: {
+        id: 'finanzas',
+        name: 'Finanzas Personales desde Cero',
+        keywords: ['finanzas', 'plata', 'ahorrar', 'invertir', 'dinero', 'financiero'],
         plans: {
-            estandar: { id: 'estandar', name: 'Estándar', price: 19900 },
-            platino: { id: 'platino', name: 'Platino', price: 29900 }
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
+        }
+    },
+    canva: {
+        id: 'canva',
+        name: 'Canva Pro en 1 Hora',
+        keywords: ['canva', 'diseño', 'disenar', 'grafico'],
+        plans: {
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
+        }
+    },
+    copywriting: {
+        id: 'copywriting',
+        name: 'Copywriting para WhatsApp',
+        keywords: ['copywriting', 'copy', 'mensajes', 'escribir', 'textos', 'whatsapp'],
+        plans: {
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
+        }
+    },
+    productividad: {
+        id: 'productividad',
+        name: 'Productividad Real',
+        keywords: ['productividad', 'productivo', 'rendir', 'tiempo', 'organizar', 'habitos'],
+        plans: {
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
+        }
+    },
+    django: {
+        id: 'django',
+        name: 'Django desde Cero',
+        keywords: ['django', 'python', 'web', 'programar', 'programacion', 'desarrollo web', 'backend'],
+        plans: {
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
+        }
+    },
+    hacking: {
+        id: 'hacking',
+        name: 'Hacking Ético',
+        keywords: ['hacking', 'hack', 'etico', 'ciberseguridad', 'seguridad', 'pentest', 'hackers'],
+        plans: {
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
+        }
+    },
+    excel: {
+        id: 'excel',
+        name: 'Excel que Sí Usas',
+        keywords: ['excel', 'hoja de calculo', 'tablas', 'formulas', 'spreadsheet'],
+        plans: {
+            curso: { id: 'curso', name: 'Curso', price: 10000 }
         }
     }
 };
