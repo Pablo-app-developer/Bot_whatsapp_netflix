@@ -1,172 +1,133 @@
-# StreamFlow WhatsApp Bot
+# StreamFlow WhatsApp Bot — Documentación completa
 
-Bot de WhatsApp con IA para venta automatizada de cuentas de streaming (Netflix, Max). Responde clientes, genera links de pago y entrega credenciales automáticamente al confirmar el pago.
-
-**Producción:** `https://botwhatsappnetflix-production.up.railway.app`
-**Repo:** `https://github.com/Pablo-app-developer/Bot_whatsapp_netflix`
-
----
-
-## Flujo completo
-
-```
-Cliente escribe "Hola"
-    ↓
-Valeria (IA) saluda y ofrece catálogo
-    ↓
-Cliente: "quiero Netflix Premium"
-    ↓
-Bot detecta intención → crea Orden → envía link Wompi
-    ↓
-Cliente paga
-    ↓
-Wompi → POST /webhook/wompi
-    ↓
-Bot asigna cuenta disponible → envía credenciales por WhatsApp ✅
-```
+Bot de WhatsApp con IA para venta de cursos online. La IA se llama **Valeria**, una chica colombiana de 24 años que vende cursos que ella misma creó.
 
 ---
 
 ## Stack
 
 - **Runtime:** Node.js 24 + Express
-- **IA:** Groq API — llama-3.1-8b-instant (14,400 req/día gratis)
-- **WhatsApp:** Meta Cloud API
-- **Pagos:** Wompi (Colombia)
-- **Base de datos:** JSON files (`data/`)
-- **Hosting:** Railway
+- **IA:** Groq API — modelo `llama-3.1-8b-instant`
+- **Mensajería:** WhatsApp Cloud API (Meta)
+- **Pagos:** Wompi (modo test actualmente)
+- **Hosting:** Railway (auto-deploy desde GitHub)
+- **DB:** JSON files (`data/accounts.json`, `orders.json`, `clients.json`)
 
 ---
 
-## Estructura
+## Infraestructura de producción
 
-```
-backend/
-├── server.js
-├── controllers/
-│   └── whatsappController.js     # Recibe mensajes y webhook Wompi
-├── routes/
-│   └── whatsapp.js               # GET/POST /webhook, POST /webhook/wompi
-├── services/
-│   ├── geminiService.js          # IA con Groq (bot "Valeria")
-│   ├── whatsappService.js        # Envío de mensajes
-│   ├── intentService.js          # Detección de intención de compra
-│   ├── paymentService.js         # Links de pago Wompi
-│   ├── inventoryService.js       # Gestión de cuentas de streaming
-│   ├── orderService.js           # Órdenes y clientes
-│   ├── credentialService.js      # Entrega automática post-pago
-│   ├── adminService.js           # Panel admin por WhatsApp
-│   └── dbService.js              # Lectura/escritura JSON files
-├── data/
-│   ├── accounts.json             # Inventario de cuentas
-│   ├── orders.json               # Órdenes de compra
-│   └── clients.json              # Clientes activos
-└── utils/
-    ├── logger.js
-    └── cache.js
-```
+| Servicio | Detalle |
+|---|---|
+| URL Railway | `https://botwhatsappnetflix-production.up.railway.app` |
+| GitHub | `https://github.com/Pablo-app-developer/Bot_whatsapp_netflix` |
+| Número WhatsApp | `+57 318 9277573` |
+| Phone Number ID | `1143854128805185` |
+| WABA ID | `4296970973856614` |
+| Webhook URL | `https://botwhatsappnetflix-production.up.railway.app/webhook` |
+| Webhook token | `streamflow_token_2024` |
 
 ---
 
-## Variables de entorno
+## Variables de entorno (Railway)
 
-```env
-WHATSAPP_API_TOKEN=               # Token permanente de System User (Meta)
-WHATSAPP_PHONE_NUMBER_ID=         # ID del número de WhatsApp Business
-WHATSAPP_BUSINESS_ACCOUNT_ID=     # ID de la cuenta Business
-WHATSAPP_WEBHOOK_VERIFY_TOKEN=    # Token de verificación del webhook
-
-GROQ_API_KEY=                     # API key de Groq (gratis en console.groq.com)
-
-WOMPI_PUBLIC_KEY=                 # Llave pública Wompi
-WOMPI_PRIVATE_KEY=                # Llave privada Wompi
-
-ADMIN_PHONE=57XXXXXXXXXX          # Tu número (con código de país, sin +)
-ADMIN_KEY=!admin                  # Prefijo para comandos de admin
-
-PORT=3001
-NODE_ENV=production
-BASE_URL=https://botwhatsappnetflix-production.up.railway.app
+```
+WHATSAPP_API_TOKEN        → token permanente de System User (no expira)
+WHATSAPP_PHONE_NUMBER_ID  → 1143854128805185
+WHATSAPP_BUSINESS_ACCOUNT_ID → 4296970973856614
+WHATSAPP_WEBHOOK_VERIFY_TOKEN → streamflow_token_2024
+GROQ_API_KEY              → empieza con gsk_...
+WOMPI_PUBLIC_KEY          → pub_test_... (modo test)
+ADMIN_PHONE               → 573214498647
+ADMIN_KEY                 → !admin
+PORT                      → (Railway lo asigna automáticamente)
+NODE_ENV                  → production
+BASE_URL                  → https://botwhatsappnetflix-production.up.railway.app
 ```
 
 ---
 
-## Panel de administrador
+## Catálogo de cursos (todos a $10.000 COP)
 
-Envía estos comandos desde tu WhatsApp (número configurado en `ADMIN_PHONE`):
-
-| Comando | Descripción |
-|---------|-------------|
-| `!admin agregar netflix premium email pass Perfil 1234` | Agregar cuenta al inventario |
-| `!admin disponibles` | Ver stock por plan |
-| `!admin listar` | Ver todas las cuentas |
-| `!admin stats` | Resumen del negocio |
-| `!admin clientes activos` | Lista de clientes |
-| `!admin cliente 573001234567` | Datos de un cliente |
-| `!admin ordenes pending` | Órdenes pendientes |
-| `!admin liberar <id>` | Liberar cuenta asignada |
-| `!admin ayuda` | Ver todos los comandos |
+| Curso | Keywords detectadas |
+|---|---|
+| Redes Sociales que Venden | redes, contenido, instagram, tiktok |
+| Finanzas Personales desde Cero | finanzas, plata, ahorrar, invertir |
+| Canva Pro en 1 Hora | canva, diseño |
+| Copywriting para WhatsApp | copywriting, copy, mensajes |
+| Productividad Real | productividad, rendir, tiempo |
+| Django desde Cero | django, python, web, programacion |
+| Hacking Ético | hacking, ciberseguridad, seguridad |
+| Excel que Sí Usas | excel, formulas, tablas |
 
 ---
 
-## Endpoints
+## Arquitectura
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| GET | `/health` | Estado del servidor |
-| GET | `/webhook` | Verificación webhook Meta |
-| POST | `/webhook` | Recepción de mensajes WhatsApp |
-| POST | `/webhook/wompi` | Confirmación de pagos Wompi |
+```
+WhatsApp usuario
+      ↓
+Meta Cloud API
+      ↓
+POST /webhook  (Railway)
+      ↓
+whatsappController.js
+      ├── isAdminCommand? → adminService.js
+      ├── extractPurchaseIntent → intentService.js
+      ├── getAIResponse → geminiService.js (Groq)
+      └── hasPurchaseIntent?
+              ├── getPaymentLink → paymentService.js (Wompi)
+              └── createOrder → orderService.js
 
----
-
-## Configuración inicial (paso a paso)
-
-### 1. Groq API Key (gratis)
-1. Crear cuenta en `https://console.groq.com`
-2. API Keys → Create API Key
-3. Copiar la clave (`gsk_...`)
-
-### 2. WhatsApp Cloud API (Meta)
-1. Crear app en `https://developers.facebook.com/apps/`
-2. Agregar producto WhatsApp
-3. Copiar: Access Token, Phone Number ID, Business Account ID
-4. **Token permanente:** Business Settings → System Users → crear admin → asignar app → Generate Token (expiración: Nunca)
-
-### 3. Webhook Meta
-1. WhatsApp → Configuración de la API → Webhook → Editar
-2. URL: `https://TU-URL.up.railway.app/webhook`
-3. Token: el valor de `WHATSAPP_WEBHOOK_VERIFY_TOKEN`
-4. Suscribir campo `messages`
-5. Activar suscripción WABA vía API:
-   ```
-   POST https://graph.facebook.com/v18.0/{WABA_ID}/subscribed_apps
-   Authorization: Bearer {TOKEN}
-   ```
-
-### 4. Deploy en Railway
-1. Push código a GitHub
-2. Railway → New Project → Deploy from GitHub
-3. Configurar variables de entorno
-4. Railway genera URL pública automáticamente
+Wompi pago aprobado
+      ↓
+POST /webhook/wompi
+      ↓
+deliverCredentials → credentialService.js
+      ↓
+sendWhatsAppMessage → cliente recibe acceso
+```
 
 ---
 
-## Catálogo de precios
+## Comandos admin (desde WhatsApp del número admin)
 
-| Servicio | Plan | Precio COP |
-|----------|------|-----------|
-| Netflix | Móvil | $16.900 |
-| Netflix | Estándar | $26.900 |
-| Netflix | Premium | $38.900 |
-| Max | Estándar | $19.900 |
-| Max | Platino | $29.900 |
+```
+!admin agregar <svc> <plan> <email> <pass> [perfil] [pin]
+!admin listar [svc] [plan]
+!admin disponibles
+!admin stats
+!admin ordenes [pending|approved]
+!admin clientes [activos]
+!admin cliente <número>
+!admin liberar <id>
+```
+
+---
+
+## Flujo de deploy
+
+1. Editar código localmente en carpeta `backend/`
+2. `git add .`
+3. `git commit -m "descripción"`
+4. `git push origin main`
+5. Railway hace redeploy automático en ~2 minutos
+
+---
+
+## Fixes críticos aprendidos
+
+- **GROQ_API_KEY en Railway:** debe empezar con `gsk_`. Si la IA falla solo en producción, verificar este valor primero.
+- **WHATSAPP_API_TOKEN:** usar token permanente de System User (Business Manager → Usuarios del sistema). El token temporal del App Dashboard expira en 24h.
+- **WABA suscripción:** se activa vía `POST /v21.0/{wabaId}/subscribed_apps` — la UI de Meta no lo hace sola.
+- **Webhook Meta:** debe apuntar a Railway, no a ngrok. Ngrok solo para desarrollo local.
+- El número `+57 318 9277573` tiene WABA ID `4296970973856614`, distinto al número de prueba original.
 
 ---
 
 ## Pendiente
 
-- [ ] Configurar webhook de Wompi para entrega automática de credenciales
-- [ ] Pasar Wompi a modo producción
-- [ ] Agregar cuentas reales con `!admin agregar`
-- [ ] Migrar base de datos de JSON a PostgreSQL para mayor escala
+- Configurar webhook de Wompi para entrega automática de credenciales
+- Agregar links/accesos reales de los cursos en `credentialService.js`
+- Pasar Wompi a modo producción cuando haya ventas reales
+- Finalizar catálogo con los cursos reales del usuario
