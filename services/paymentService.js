@@ -10,7 +10,13 @@ const BASE_URL = process.env.BASE_URL || 'https://botwhatsappnetflix-production.
 
 export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
     const amountInCents = 10000 * 100;
+    const currency = 'COP';
     const reference = `FPT-${courseSlug}-${Date.now()}-${customerPhone.slice(-4)}`;
+
+    // Firma de integridad requerida por Wompi
+    // SHA256(reference + amount_in_cents + currency + integrity_key)
+    const integrityString = `${reference}${amountInCents}${currency}${WOMPI_INTEGRITY_KEY}`;
+    const signature = crypto.createHash('sha256').update(integrityString).digest('hex');
 
     // Guardar orden pendiente para recuperarla cuando llegue el webhook
     createOrder({
@@ -23,10 +29,11 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
 
     const params = new URLSearchParams({
         'public-key': WOMPI_PUBLIC_KEY,
-        'currency': 'COP',
+        'currency': currency,
         'amount-in-cents': amountInCents,
         'reference': reference,
-        'redirect-url': `https://formacionparatodos.online`,
+        'signature:integrity': signature,
+        'redirect-url': 'https://formacionparatodos.online',
     });
 
     const paymentUrl = `https://checkout.wompi.co/p/?${params.toString()}`;
