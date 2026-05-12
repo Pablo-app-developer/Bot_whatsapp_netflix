@@ -77,9 +77,11 @@ export const extractPurchaseIntent = (userMessage, conversationHistory = []) => 
 
     // Palabras clave de intención de compra
     const buyKeywords = [
-        'quiero', 'comprar', 'dame', 'vender', 'necesito',
-        'me das', 'cuanto cuesta', 'precio', 'cotizar',
-        'enviar', 'pagar', 'link', 'de una', 'si'
+        'quiero', 'comprar', 'dame', 'necesito', 'me das',
+        'cuanto cuesta', 'precio', 'pagar', 'link', 'de una',
+        'si', 'sí', 'listo', 'dale', 'claro', 'va', 'bueno',
+        'me interesa', 'interesado', 'interesada', 'lo quiero',
+        'la quiero', 'tomarlo', 'adquirir', 'ok', 'okay'
     ];
 
     const hasBuyIntent = buyKeywords.some(keyword => lowerMessage.includes(keyword));
@@ -133,9 +135,9 @@ export const extractPurchaseIntent = (userMessage, conversationHistory = []) => 
                 if (detectedPlan) break;
             }
 
-            // Si aún no hay plan, usar el más popular (Estándar)
-            if (!detectedPlan && detectedService.plans.estandar) {
-                detectedPlan = detectedService.plans.estandar;
+            // Todos los cursos tienen un solo plan: 'curso' — usarlo por defecto
+            if (!detectedPlan) {
+                detectedPlan = detectedService.plans.curso;
             }
         }
     }
