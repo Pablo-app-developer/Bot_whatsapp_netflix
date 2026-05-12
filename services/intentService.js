@@ -5,7 +5,7 @@ const SERVICES = {
     redes: {
         id: 'redes-sociales',
         name: 'Redes Sociales que Venden',
-        keywords: ['redes', 'redes sociales', 'contenido', 'instagram', 'tiktok', 'seguidores'],
+        keywords: ['redes', 'redes sociales', 'instagram', 'tiktok', 'seguidores', 'social media'],
         plans: {
             curso: { id: 'curso', name: 'Curso', price: 10000 }
         }
@@ -84,12 +84,28 @@ export const extractPurchaseIntent = (userMessage, conversationHistory = []) => 
 
     const hasBuyIntent = buyKeywords.some(keyword => lowerMessage.includes(keyword));
 
-    // Detectar servicio mencionado
+    // Detectar servicio mencionado en el mensaje actual
     let detectedService = null;
     for (const [key, service] of Object.entries(SERVICES)) {
         if (service.keywords.some(keyword => lowerMessage.includes(keyword))) {
             detectedService = service;
             break;
+        }
+    }
+
+    // Si no se detectó en el mensaje actual, buscar en historial reciente
+    if (!detectedService && conversationHistory.length > 0) {
+        const recentTexts = conversationHistory.slice(-6).map(m =>
+            m.content.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+        );
+        for (const text of recentTexts.reverse()) {
+            for (const [key, service] of Object.entries(SERVICES)) {
+                if (service.keywords.some(keyword => text.includes(keyword))) {
+                    detectedService = service;
+                    break;
+                }
+            }
+            if (detectedService) break;
         }
     }
 
