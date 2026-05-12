@@ -3,7 +3,7 @@ import { logger } from '../utils/logger.js';
 // Catálogo de servicios
 const SERVICES = {
     redes: {
-        id: 'redes',
+        id: 'redes-sociales',
         name: 'Redes Sociales que Venden',
         keywords: ['redes', 'redes sociales', 'contenido', 'instagram', 'tiktok', 'seguidores'],
         plans: {
@@ -51,7 +51,7 @@ const SERVICES = {
         }
     },
     hacking: {
-        id: 'hacking',
+        id: 'hacking-etico',
         name: 'Hacking Ético',
         keywords: ['hacking', 'hack', 'etico', 'ciberseguridad', 'seguridad', 'pentest', 'hackers'],
         plans: {

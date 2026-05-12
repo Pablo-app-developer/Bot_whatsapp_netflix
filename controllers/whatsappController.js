@@ -3,8 +3,8 @@ import { getAIResponse } from '../services/geminiService.js';
 import { extractPurchaseIntent } from '../services/intentService.js';
 import { getPaymentLink } from '../services/paymentService.js';
 import { isAdminCommand, processAdminCommand } from '../services/adminService.js';
-import { deliverCredentials } from '../services/credentialService.js';
-import { createOrder, findOrderByReference, updateOrderStatus } from '../services/orderService.js';
+import { deliverCourse } from '../services/credentialService.js';
+import { findOrderByReference, updateOrderStatus } from '../services/orderService.js';
 import { logger } from '../utils/logger.js';
 import { conversationCache } from '../utils/cache.js';
 import crypto from 'crypto';
@@ -83,19 +83,12 @@ export const handleIncomingMessage = async (req, res) => {
 
         // Send payment link if purchase detected
         if (purchaseIntent.hasPurchaseIntent) {
-            const paymentData = await getPaymentLink(purchaseIntent.service, purchaseIntent.plan, from);
-
-            createOrder({
-                reference: paymentData.reference,
-                phone: from,
-                service: purchaseIntent.serviceId || purchaseIntent.service.toLowerCase(),
-                plan: purchaseIntent.planId || purchaseIntent.plan.toLowerCase(),
-                amount: paymentData.amount,
-            });
+            // getPaymentLink ya guarda la orden internamente
+            const paymentData = await getPaymentLink(purchaseIntent.serviceId, purchaseIntent.service, from);
 
             await sendWhatsAppMessage(from, {
                 type: 'text',
-                text: { body: `💳 *Link de pago seguro (Wompi):*\n\n${paymentData.url}\n\n✅ Tu cuenta se enviará *automáticamente* al confirmar el pago.` },
+                text: { body: `💳 *Link de pago seguro (Wompi):*\n\n${paymentData.url}\n\n✅ El material se envía automáticamente al confirmar el pago.` },
             });
         }
 
@@ -131,8 +124,8 @@ export const handleWompiWebhook = async (req, res) => {
             return;
         }
 
-        logger.info(`✅ Payment approved for ${reference} — delivering credentials`);
-        await deliverCredentials(order);
+        logger.info(`✅ Payment approved for ${reference} — delivering course`);
+        await deliverCourse(order);
 
     } catch (err) {
         logger.error('❌ Wompi webhook error:', err);
