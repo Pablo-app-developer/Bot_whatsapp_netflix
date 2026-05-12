@@ -1,13 +1,12 @@
 import { sendWhatsAppMessage, markMessageAsRead } from '../services/whatsappService.js';
 import { getAIResponse } from '../services/geminiService.js';
-import { extractPurchaseIntent } from '../services/intentService.js';
+import { extractPurchaseIntent, detectService, hasBuyIntent } from '../services/intentService.js';
 import { getPaymentLink } from '../services/paymentService.js';
 import { isAdminCommand, processAdminCommand } from '../services/adminService.js';
 import { deliverCourse } from '../services/credentialService.js';
 import { findOrderByReference, updateOrderStatus } from '../services/orderService.js';
 import { logger } from '../utils/logger.js';
-import { conversationCache } from '../utils/cache.js';
-import crypto from 'crypto';
+import { conversationCache, paymentCache } from '../utils/cache.js';
 
 export const verifyWebhook = (req, res) => {
     const mode = req.query['hub.mode'];
@@ -43,7 +42,7 @@ export const handleIncomingMessage = async (req, res) => {
         if (messageType !== 'text') {
             await sendWhatsAppMessage(from, {
                 type: 'text',
-                text: { body: 'Hola! Escríbeme un mensaje de texto para ayudarte 😊' },
+                text: { body: 'Escríbeme un mensaje de texto para ayudarte.' },
             });
             return;
         }
@@ -51,55 +50,77 @@ export const handleIncomingMessage = async (req, res) => {
         const userMessage = message.text.body;
         logger.info(`💬 "${userMessage}"`);
 
-        // ── Admin commands ─────────────────────────────────────────
+        // ── Admin ──────────────────────────────────────────────────
         if (isAdminCommand(from, userMessage)) {
             const response = processAdminCommand(userMessage);
             await sendWhatsAppMessage(from, { type: 'text', text: { body: response } });
             return;
         }
 
-        // ── Normal flow ────────────────────────────────────────────
+        // ── Detectar servicio y compra ─────────────────────────────
+        const intent = extractPurchaseIntent(userMessage);
+
+        // Si se menciona un curso, guardarlo en el cache de sesión
+        if (intent.hasServiceMention) {
+            paymentCache.set(`service:${from}`, {
+                serviceId: intent.serviceId,
+                serviceName: intent.service,
+            });
+            logger.info(`💾 Servicio guardado en sesión: ${intent.serviceId}`);
+        }
+
+        // Si hay intención de compra pero el curso no está en el mensaje actual,
+        // buscarlo en el cache de sesión (mencionado antes en la conversación)
+        let targetService = null;
+        if (intent.hasBuyIntent) {
+            if (intent.serviceId) {
+                targetService = { serviceId: intent.serviceId, serviceName: intent.service };
+            } else {
+                const cached = paymentCache.get(`service:${from}`);
+                if (cached) {
+                    targetService = cached;
+                    logger.info(`📦 Servicio recuperado del cache: ${cached.serviceId}`);
+                }
+            }
+        }
+
+        const shouldSendLink = intent.hasBuyIntent && !!targetService;
+
+        // ── Respuesta IA ───────────────────────────────────────────
         const history = conversationCache.get(from) || [];
         history.push({ role: 'user', content: userMessage, timestamp: new Date().toISOString() });
 
-        const purchaseIntent = extractPurchaseIntent(userMessage, history);
-        let responseText;
-
-        if (purchaseIntent.hasPurchaseIntent) {
-            logger.info('🛒 Purchase intent:', purchaseIntent);
-            responseText = await getAIResponse(history, {
-                forceCheckout: true,
-                service: purchaseIntent.service,
-                plan: purchaseIntent.plan,
-            });
-        } else {
-            responseText = await getAIResponse(history);
-        }
+        const responseText = await getAIResponse(history, shouldSendLink ? {
+            forceCheckout: true,
+            service: targetService?.serviceName,
+            plan: 'Curso',
+        } : {});
 
         history.push({ role: 'assistant', content: responseText, timestamp: new Date().toISOString() });
         conversationCache.set(from, history.slice(-20));
 
         await sendWhatsAppMessage(from, { type: 'text', text: { body: responseText } });
 
-        // Send payment link if purchase detected
-        if (purchaseIntent.hasPurchaseIntent) {
-            // getPaymentLink ya guarda la orden internamente
-            const paymentData = await getPaymentLink(purchaseIntent.serviceId, purchaseIntent.service, from);
-
-            await sendWhatsAppMessage(from, {
-                type: 'text',
-                text: { body: `💳 *Link de pago seguro (Wompi):*\n\n${paymentData.url}\n\n✅ El material se envía automáticamente al confirmar el pago.` },
-            });
+        // ── Enviar link de pago ────────────────────────────────────
+        if (shouldSendLink) {
+            try {
+                const paymentData = await getPaymentLink(targetService.serviceId, targetService.serviceName, from);
+                await sendWhatsAppMessage(from, {
+                    type: 'text',
+                    text: { body: `💳 *Link de pago seguro:*\n\n${paymentData.url}\n\n✅ El material se envía automáticamente por WhatsApp al confirmar el pago.` },
+                });
+                logger.info(`💳 Link enviado a ${from} para ${targetService.serviceId}`);
+            } catch (payErr) {
+                logger.error('❌ Error enviando link de pago:', payErr);
+            }
         }
 
-        logger.info('✅ Message processed');
     } catch (err) {
         logger.error('❌ Error handling message:', err);
     }
 };
 
-// ── Wompi payment webhook ─────────────────────────────────────────────────────
-
+// ── Wompi webhook ─────────────────────────────────────────────────────────────
 export const handleWompiWebhook = async (req, res) => {
     try {
         res.sendStatus(200);
@@ -111,20 +132,14 @@ export const handleWompiWebhook = async (req, res) => {
 
         if (event !== 'transaction.updated' || transaction?.status !== 'APPROVED') return;
 
-        const reference = transaction.reference;
-        const order = findOrderByReference(reference);
-
+        const order = findOrderByReference(transaction.reference);
         if (!order) {
-            logger.warn(`⚠️ No order found for reference: ${reference}`);
+            logger.warn(`⚠️ Orden no encontrada: ${transaction.reference}`);
             return;
         }
+        if (order.status === 'approved') return;
 
-        if (order.status === 'approved') {
-            logger.info(`Order ${reference} already processed`);
-            return;
-        }
-
-        logger.info(`✅ Payment approved for ${reference} — delivering course`);
+        updateOrderStatus(transaction.reference, 'approved');
         await deliverCourse(order);
 
     } catch (err) {
