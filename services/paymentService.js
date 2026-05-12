@@ -32,11 +32,11 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
         'currency': currency,
         'amount-in-cents': amountInCents,
         'reference': reference,
-        'signature:integrity': signature,
         'redirect-url': 'https://formacionparatodos.online',
     });
 
-    const paymentUrl = `https://checkout.wompi.co/p/?${params.toString()}`;
+    // signature:integrity debe ir sin codificar los dos puntos — URLSearchParams los codifica como %3A
+    const paymentUrl = `https://checkout.wompi.co/p/?${params.toString()}&signature:integrity=${signature}`;
 
     logger.info('💳 Payment link generated:', { course: courseSlug, reference, customer: customerPhone });
 
