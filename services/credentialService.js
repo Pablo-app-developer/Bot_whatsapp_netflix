@@ -1,66 +1,54 @@
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { sendWhatsAppMessage } from './whatsappService.js';
-import { getAvailableAccount, assignAccount } from './inventoryService.js';
-import { updateOrderStatus, saveClient } from './orderService.js';
 import { logger } from '../utils/logger.js';
 
-const SERVICE_EMOJI = { netflix: '📺', max: '🎬' };
-const PLAN_LABEL = {
-    movil: 'Móvil',
-    estandar: 'Estándar',
-    premium: 'Premium',
-    platino: 'Platino',
-};
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const coursesPath = join(__dirname, '../data/courses.json');
 
-export const deliverCredentials = async (order) => {
-    const { phone, service, plan, reference } = order;
+const getCourses = () => JSON.parse(readFileSync(coursesPath, 'utf8'));
 
-    const account = getAvailableAccount(service, plan);
-    if (!account) {
-        logger.error(`❌ No available accounts for ${service} ${plan}`);
+export const deliverCourse = async (order) => {
+    const { phone, service: courseSlug, reference } = order;
+    const courses = getCourses();
+    const course = courses[courseSlug];
 
+    if (!course) {
+        logger.error(`❌ Curso no encontrado en catálogo: ${courseSlug}`);
         await sendWhatsAppMessage(phone, {
             type: 'text',
-            text: { body: '✅ *Pago confirmado!* Gracias parce 💫\n\n⚠️ Estoy preparando tu cuenta, te la envío en unos minutos. Si en 10 min no llega escríbeme de una.' },
+            text: { body: '✅ Pago confirmado. Estamos preparando tu acceso, te lo enviamos en unos minutos.' },
         });
+        return false;
+    }
 
-        // Notify admin
+    if (!course.driveLink) {
+        // Curso sin link aún — notificar admin
+        logger.error(`❌ Sin link para curso: ${courseSlug}`);
         const adminPhone = process.env.ADMIN_PHONE;
         if (adminPhone) {
             await sendWhatsAppMessage(adminPhone, {
                 type: 'text',
-                text: { body: `🚨 *ALERTA: Sin stock!*\nPago aprobado pero no hay cuentas disponibles.\n\nCliente: ${phone}\nServicio: ${service} ${plan}\nRef: ${reference}\n\n⚡ Agrega una cuenta con:\n!agregar ${service} ${plan} email pass Perfil PIN` },
+                text: { body: `🚨 *Pago recibido sin link configurado*\nCurso: ${course.name}\nCliente: ${phone}\nRef: ${reference}\n\n⚡ Agrega el link en data/courses.json` },
             });
         }
+        await sendWhatsAppMessage(phone, {
+            type: 'text',
+            text: { body: '✅ Pago confirmado. Te enviamos el acceso en unos minutos.' },
+        });
         return false;
     }
 
-    const assigned = assignAccount(account.id, phone);
-    updateOrderStatus(reference, 'approved', account.id);
-    saveClient({ phone, service, plan, accountId: account.id });
-
-    const emoji = SERVICE_EMOJI[service] || '🎬';
-    const planLabel = PLAN_LABEL[plan] || plan;
-    const serviceName = service.charAt(0).toUpperCase() + service.slice(1);
-
-    let msg = `✅ *Pago confirmado! Tu cuenta está lista* 🎉\n\n`;
-    msg += `${emoji} *${serviceName} ${planLabel}*\n\n`;
-    msg += `📧 *Correo:* ${assigned.email}\n`;
-    msg += `🔑 *Contraseña:* ${assigned.password}\n`;
-
-    if (assigned.profileName) {
-        msg += `\n👤 *Tu perfil:* ${assigned.profileName}\n`;
-    }
-    if (assigned.profilePin) {
-        msg += `🔢 *PIN del perfil:* ${assigned.profilePin}\n`;
-    }
-
-    msg += `\n⚠️ *Importante:*\n`;
-    msg += `• Usa SOLO tu perfil\n`;
-    msg += `• NO cambies la contraseña\n`;
-    msg += `• Garantía total por 30 días\n\n`;
-    msg += `Cualquier problema me avisas de una 💫`;
+    const msg =
+        `✅ *Pago confirmado — acceso listo* 🎉\n\n` +
+        `${course.emoji} *${course.name}*\n\n` +
+        `📂 *Tu material de estudio:*\n` +
+        `${course.driveLink}\n\n` +
+        `📌 Guarda este link — es tu acceso de por vida.\n` +
+        `Cualquier problema responde aquí mismo.`;
 
     await sendWhatsAppMessage(phone, { type: 'text', text: { body: msg } });
-    logger.info(`✅ Credentials delivered to ${phone}: ${service} ${plan}`);
+    logger.info(`✅ Curso entregado a ${phone}: ${course.name}`);
     return true;
 };

@@ -1,0 +1,56 @@
+{
+  "hacking-etico": {
+    "name": "Hacking Ético",
+    "emoji": "🔐",
+    "price": 10000,
+    "driveLink": "https://drive.google.com/drive/folders/1WgCfR9vNhYH855u_xPwWI8eIYMCC97OG?usp=sharing"
+  },
+  "python": {
+    "name": "Python desde Cero",
+    "emoji": "🐍",
+    "price": 10000,
+    "driveLink": null
+  },
+  "django": {
+    "name": "Django desde Cero",
+    "emoji": "🌐",
+    "price": 10000,
+    "driveLink": null
+  },
+  "excel": {
+    "name": "Excel que Sí Usas",
+    "emoji": "📊",
+    "price": 10000,
+    "driveLink": null
+  },
+  "canva": {
+    "name": "Canva Pro en 1 Hora",
+    "emoji": "🎨",
+    "price": 10000,
+    "driveLink": null
+  },
+  "copywriting": {
+    "name": "Copywriting para WhatsApp",
+    "emoji": "📝",
+    "price": 10000,
+    "driveLink": null
+  },
+  "productividad": {
+    "name": "Productividad Real",
+    "emoji": "🧠",
+    "price": 10000,
+    "driveLink": null
+  },
+  "redes-sociales": {
+    "name": "Redes Sociales que Venden",
+    "emoji": "📱",
+    "price": 10000,
+    "driveLink": null
+  },
+  "finanzas": {
+    "name": "Finanzas Personales desde Cero",
+    "emoji": "💰",
+    "price": 10000,
+    "driveLink": null
+  }
+}
