@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import whatsappRoutes from './routes/whatsapp.js';
-import { handleBoldWebhook } from './services/paymentService.js';
+import { handleMPWebhook } from './services/paymentService.js';
 import { logger } from './utils/logger.js';
 
 // Cargar variables de entorno
@@ -67,14 +67,14 @@ app.get('/health', (req, res) => {
 // ============================================
 app.use('/webhook', whatsappRoutes);
 
-// Webhook de Bold — recibe confirmación de pagos
-app.post('/bold-webhook', async (req, res) => {
+// Webhook de Mercado Pago — recibe confirmación de pagos
+app.post('/mp-webhook', async (req, res) => {
     try {
-        const result = await handleBoldWebhook(req.body);
+        const result = await handleMPWebhook(req.body);
         res.status(200).json(result);
     } catch (error) {
-        logger.error('Error en webhook Bold:', error);
-        res.status(200).json({ processed: false }); // siempre 200 para que Bold no reintente
+        logger.error('Error en webhook MP:', error);
+        res.status(200).json({ processed: false }); // siempre 200 para que MP no reintente
     }
 });
 
