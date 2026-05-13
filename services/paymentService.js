@@ -19,28 +19,36 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
 
     logger.info('🔑 Bold key configured:', !!BOLD_SECRET_KEY);
 
-    const response = await fetch('https://integrations.bold.co/integration/payment/link/v1', {
-        method: 'POST',
-        headers: {
-            'Authorization': `x-api-key ${BOLD_SECRET_KEY}`,
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            amount_type: 'CLOSE',
-            amount: {
-                currency: 'COP',
-                total_amount: amount,
+    let response;
+    try {
+        response = await fetch('https://integrations.bold.co/integration/payment/link/v1', {
+            method: 'POST',
+            headers: {
+                'Authorization': `x-api-key ${BOLD_SECRET_KEY}`,
+                'Content-Type': 'application/json',
             },
-            description: `Curso: ${courseName}`,
-            reference,
-            expiration_date: '2099-12-31',
-            callback_url: 'https://formacionparatodos.online',
-        }),
-    });
+            body: JSON.stringify({
+                amount_type: 'CLOSE',
+                amount: {
+                    currency: 'COP',
+                    total_amount: amount,
+                },
+                description: `Curso: ${courseName}`,
+                reference,
+                expiration_date: '2099-12-31',
+                callback_url: 'https://formacionparatodos.online',
+            }),
+        });
+    } catch (fetchError) {
+        logger.error('❌ Error de red al llamar Bold:', {
+            message: fetchError.message,
+            code: fetchError.cause?.code,
+            cause: String(fetchError.cause),
+        });
+        throw fetchError;
+    }
 
     const data = await response.json();
-
-    // Log completo para diagnóstico
     logger.info('📡 Bold API response:', { status: response.status, data: JSON.stringify(data) });
 
     if (!response.ok) {
@@ -48,7 +56,6 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
         throw new Error(`Bold API error ${response.status}`);
     }
 
-    // Bold puede retornar el URL en distintas estructuras
     const url = data?.payload?.url || data?.url || data?.payment_url || data?.link;
     if (!url) {
         logger.error('❌ Bold no devolvió URL. Respuesta completa:', JSON.stringify(data));
