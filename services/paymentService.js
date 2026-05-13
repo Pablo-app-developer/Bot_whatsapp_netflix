@@ -21,7 +21,7 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
 
     let response;
     try {
-        response = await fetch('https://integrations.bold.co/integration/payment/link/v1', {
+        response = await fetch('https://integrations.api.bold.co/integration/payment/link/v1', {
             method: 'POST',
             headers: {
                 'Authorization': `x-api-key ${BOLD_SECRET_KEY}`,
