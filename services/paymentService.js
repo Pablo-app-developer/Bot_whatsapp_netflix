@@ -1,109 +1,92 @@
-import crypto from 'crypto';
 import { createOrder, findOrderByReference, updateOrderStatus } from './orderService.js';
 import { deliverCourse } from './credentialService.js';
 import { logger } from '../utils/logger.js';
 
-const WOMPI_PUBLIC_KEY = process.env.WOMPI_PUBLIC_KEY;
-const WOMPI_INTEGRITY_KEY = process.env.WOMPI_INTEGRITY_KEY;
-const WOMPI_EVENTS_KEY = process.env.WOMPI_EVENTS_KEY;
+const BOLD_SECRET_KEY = process.env.BOLD_SECRET_KEY;
 const BASE_URL = process.env.BASE_URL || 'https://botwhatsappnetflix-production.up.railway.app';
 
 export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
-    const amountInCents = 10000 * 100;
-    const currency = 'COP';
+    const amount = 10000; // COP
     const reference = `FPT-${courseSlug}-${Date.now()}-${customerPhone.slice(-4)}`;
 
-    // Firma de integridad requerida por Wompi
-    // SHA256(reference + amount_in_cents + currency + integrity_key)
-    const integrityString = `${reference}${amountInCents}${currency}${WOMPI_INTEGRITY_KEY}`;
-    const signature = crypto.createHash('sha256').update(integrityString).digest('hex');
-
-    // Guardar orden pendiente para recuperarla cuando llegue el webhook
     createOrder({
         reference,
         phone: customerPhone,
         service: courseSlug,
         plan: 'curso',
-        amount: amountInCents / 100,
+        amount,
     });
 
-    const params = new URLSearchParams({
-        'public-key': WOMPI_PUBLIC_KEY,
-        'currency': currency,
-        'amount-in-cents': amountInCents,
-        'reference': reference,
-        'redirect-url': 'https://formacionparatodos.online',
+    const response = await fetch('https://integrations.bold.co/integration/payment/link/v1', {
+        method: 'POST',
+        headers: {
+            'Authorization': `x-api-key ${BOLD_SECRET_KEY}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            amount_type: 'CLOSE',
+            amount: {
+                currency: 'COP',
+                total_amount: amount,
+            },
+            description: `Curso: ${courseName}`,
+            reference,
+            expiration_date: '2099-12-31',
+            callback_url: 'https://formacionparatodos.online',
+        }),
     });
 
-    // signature:integrity debe ir sin codificar los dos puntos — URLSearchParams los codifica como %3A
-    const paymentUrl = `https://checkout.wompi.co/p/?${params.toString()}&signature:integrity=${signature}`;
+    const data = await response.json();
 
-    logger.info('💳 Payment link generated:', { course: courseSlug, reference, customer: customerPhone });
+    if (!response.ok || !data.payload?.url) {
+        logger.error('❌ Error creando link Bold:', data);
+        throw new Error('No se pudo crear el link de pago');
+    }
 
-    return { url: paymentUrl, reference, amount: amountInCents / 100, course: courseSlug };
+    logger.info('💳 Link Bold generado:', { course: courseSlug, reference, customer: customerPhone });
+
+    return { url: data.payload.url, reference, amount, course: courseSlug };
 };
 
-// Verifica que el evento viene realmente de Wompi
-const verifyWompiSignature = (transactionId, amountInCents, currency, status, signature) => {
-    if (!WOMPI_EVENTS_KEY || !signature) return true; // en test no siempre viene firma
-    const raw = `${transactionId}${amountInCents}${currency}${status}${WOMPI_EVENTS_KEY}`;
-    const expected = crypto.createHash('sha256').update(raw).digest('hex');
-    return expected === signature;
-};
-
-export const handleWompiWebhook = async (webhookData, signature) => {
+export const handleBoldWebhook = async (webhookData) => {
     try {
-        const event = webhookData?.event;
-        const transaction = webhookData?.data?.transaction;
+        const { type, data } = webhookData;
 
-        if (!transaction) {
-            logger.warn('⚠️ Wompi webhook sin datos de transacción');
+        if (!data) {
+            logger.warn('⚠️ Bold webhook sin datos de transacción');
             return { processed: false };
         }
 
-        logger.info('📥 Wompi webhook recibido:', {
-            event,
-            reference: transaction.reference,
-            status: transaction.status,
+        logger.info('📥 Bold webhook recibido:', {
+            type,
+            reference: data.reference,
+            status: data.status,
         });
 
-        const isValid = verifyWompiSignature(
-            transaction.id,
-            transaction.amount_in_cents,
-            transaction.currency,
-            transaction.status,
-            signature
-        );
-
-        if (!isValid) {
-            logger.error('❌ Firma de webhook inválida');
-            return { processed: false, error: 'invalid_signature' };
-        }
-
-        if (event === 'transaction.updated' && transaction.status === 'APPROVED') {
-            const order = findOrderByReference(transaction.reference);
+        if (type === 'PAYMENT' && data.status === 'APPROVED') {
+            const order = findOrderByReference(data.reference);
 
             if (!order) {
-                logger.error('❌ Orden no encontrada para referencia:', transaction.reference);
+                logger.error('❌ Orden no encontrada para referencia:', data.reference);
                 return { processed: false, error: 'order_not_found' };
             }
 
             if (order.status === 'approved') {
-                logger.warn('⚠️ Orden ya procesada:', transaction.reference);
+                logger.warn('⚠️ Orden ya procesada:', data.reference);
                 return { processed: true };
             }
 
-            updateOrderStatus(transaction.reference, 'approved');
+            updateOrderStatus(data.reference, 'approved');
             await deliverCourse(order);
 
-            logger.info('✅ Curso entregado:', { reference: transaction.reference, phone: order.phone });
+            logger.info('✅ Curso entregado:', { reference: data.reference, phone: order.phone });
             return { processed: true };
         }
 
         return { processed: true };
 
     } catch (error) {
-        logger.error('❌ Error procesando webhook Wompi:', error);
+        logger.error('❌ Error procesando webhook Bold:', error);
         throw error;
     }
 };

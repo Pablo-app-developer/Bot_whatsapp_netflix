@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import whatsappRoutes from './routes/whatsapp.js';
-import { handleWompiWebhook } from './services/paymentService.js';
+import { handleBoldWebhook } from './services/paymentService.js';
 import { logger } from './utils/logger.js';
 
 // Cargar variables de entorno
@@ -67,15 +67,14 @@ app.get('/health', (req, res) => {
 // ============================================
 app.use('/webhook', whatsappRoutes);
 
-// Webhook de Wompi — recibe confirmación de pagos
-app.post('/wompi-webhook', async (req, res) => {
+// Webhook de Bold — recibe confirmación de pagos
+app.post('/bold-webhook', async (req, res) => {
     try {
-        const signature = req.headers['x-wompi-signature'] || '';
-        const result = await handleWompiWebhook(req.body, signature);
+        const result = await handleBoldWebhook(req.body);
         res.status(200).json(result);
     } catch (error) {
-        logger.error('Error en webhook Wompi:', error);
-        res.status(200).json({ processed: false }); // siempre 200 para que Wompi no reintente
+        logger.error('Error en webhook Bold:', error);
+        res.status(200).json({ processed: false }); // siempre 200 para que Bold no reintente
     }
 });
 
