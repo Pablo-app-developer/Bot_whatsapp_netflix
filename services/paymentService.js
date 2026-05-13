@@ -17,6 +17,8 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
         amount,
     });
 
+    logger.info('🔑 Bold key configured:', !!BOLD_SECRET_KEY);
+
     const response = await fetch('https://integrations.bold.co/integration/payment/link/v1', {
         method: 'POST',
         headers: {
@@ -38,14 +40,24 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
 
     const data = await response.json();
 
-    if (!response.ok || !data.payload?.url) {
-        logger.error('❌ Error creando link Bold:', data);
-        throw new Error('No se pudo crear el link de pago');
+    // Log completo para diagnóstico
+    logger.info('📡 Bold API response:', { status: response.status, data: JSON.stringify(data) });
+
+    if (!response.ok) {
+        logger.error('❌ Bold API error:', { status: response.status, body: data });
+        throw new Error(`Bold API error ${response.status}`);
+    }
+
+    // Bold puede retornar el URL en distintas estructuras
+    const url = data?.payload?.url || data?.url || data?.payment_url || data?.link;
+    if (!url) {
+        logger.error('❌ Bold no devolvió URL. Respuesta completa:', JSON.stringify(data));
+        throw new Error('Bold no devolvió link de pago');
     }
 
     logger.info('💳 Link Bold generado:', { course: courseSlug, reference, customer: customerPhone });
 
-    return { url: data.payload.url, reference, amount, course: courseSlug };
+    return { url, reference, amount, course: courseSlug };
 };
 
 export const handleBoldWebhook = async (webhookData) => {
