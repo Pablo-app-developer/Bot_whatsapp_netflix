@@ -98,6 +98,20 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
         return text || 'Tuve un problema técnico un momento. ¿Me repites tu pregunta?';
 
     } catch (error) {
+        // Groq openai/gpt-oss-20b a veces envuelve la respuesta en un tool_call malformado.
+        // El texto real esta en failed_generation despues de "arguments":
+        const failed = error?.error?.failed_generation || error?.body?.error?.failed_generation;
+        if (failed && typeof failed === 'string') {
+            const match = failed.match(/"arguments"\s*:\s*([\s\S]*?)\}?\s*$/);
+            if (match && match[1]) {
+                const rescued = match[1].trim().replace(/^["']|["']$/g, '').trim();
+                if (rescued.length > 5) {
+                    logger.info('🔧 Respuesta rescatada de failed_generation:', rescued.substring(0, 60));
+                    return rescued;
+                }
+            }
+        }
+
         logger.error('❌ Error getting AI response:', {
             message: error?.message,
             status: error?.status,
