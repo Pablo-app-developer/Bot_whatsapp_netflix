@@ -74,16 +74,18 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
         }
 
         const response = await groq().chat.completions.create({
-            model: 'meta-llama/llama-4-scout-17b-16e-instruct',
+            model: 'openai/gpt-oss-20b',
             messages: [
                 { role: 'system', content: SYSTEM_PROMPT },
                 ...messages,
             ],
             temperature: 0.6,
-            max_tokens: 150,
+            max_tokens: 300,
+            reasoning_effort: 'low',
         });
 
-        const text = response.choices[0]?.message?.content?.trim();
+        const msg = response.choices[0]?.message;
+        const text = (msg?.content?.trim()) || (msg?.reasoning?.trim());
 
         logger.info('🤖 AI Response generated:', {
             length: text?.length,
