@@ -74,7 +74,7 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
         }
 
         const response = await groq().chat.completions.create({
-            model: 'openai/gpt-oss-20b',
+            model: 'meta-llama/llama-4-scout-17b-16e-instruct',
             messages: [
                 { role: 'system', content: SYSTEM_PROMPT },
                 ...messages,
