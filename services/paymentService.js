@@ -57,8 +57,8 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
         throw new Error(`MP API error ${response.status}`);
     }
 
-    // En modo test usar sandbox_init_point, en producción init_point
-    const url = MP_ACCESS_TOKEN?.startsWith('TEST-') ? data.sandbox_init_point : data.init_point;
+    // MP_MODE=production usa init_point, cualquier otro valor (o vacío) usa sandbox_init_point
+    const url = process.env.MP_MODE === 'production' ? data.init_point : data.sandbox_init_point;
 
     logger.info('💳 Link MP generado:', { course: courseSlug, reference, url });
 
