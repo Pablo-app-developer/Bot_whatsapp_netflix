@@ -112,6 +112,10 @@ export const handleIncomingMessage = async (req, res) => {
                 logger.info(`💳 Link enviado a ${from} para ${targetService.serviceId}`);
             } catch (payErr) {
                 logger.error('❌ Error enviando link de pago:', payErr);
+                await sendWhatsAppMessage(from, {
+                    type: 'text',
+                    text: { body: 'Uy, la pasarela se cayó un segundo 😅 dame 1 minuto y te reenvío el link.' },
+                });
             }
         }
 

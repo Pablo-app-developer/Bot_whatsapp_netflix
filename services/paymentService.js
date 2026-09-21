@@ -31,8 +31,13 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
             pending: 'https://formacionparatodos.online',
         },
         auto_return: 'approved',
-        notification_url: `${BASE_URL}/mp-webhook`,
     };
+
+    // notification_url solo si esta explicitamente habilitado.
+    // MP rechaza subdominios *.up.railway.app; el webhook se configura desde el panel de MP.
+    if (process.env.MP_NOTIFICATION_URL) {
+        body.notification_url = process.env.MP_NOTIFICATION_URL;
+    }
 
     let response;
     try {
