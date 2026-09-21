@@ -80,12 +80,15 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
                 ...messages,
             ],
             temperature: 0.6,
-            max_tokens: 300,
-            reasoning_effort: 'low',
+            max_tokens: 400,
         });
 
         const msg = response.choices[0]?.message;
         const text = (msg?.content?.trim()) || (msg?.reasoning?.trim());
+
+        if (!text) {
+            logger.error('⚠️ AI response empty. Raw message:', JSON.stringify(msg));
+        }
 
         logger.info('🤖 AI Response generated:', {
             length: text?.length,
@@ -95,7 +98,13 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
         return text || 'Tuve un problema técnico un momento. ¿Me repites tu pregunta?';
 
     } catch (error) {
-        logger.error('❌ Error getting AI response:', error?.message || error);
+        logger.error('❌ Error getting AI response:', {
+            message: error?.message,
+            status: error?.status,
+            code: error?.code,
+            type: error?.type,
+            body: error?.response?.data || error?.error,
+        });
         return 'Uy parce, se me trabó el cel un segundo 😅 ¿Me repites qué necesitabas?';
     }
 };
