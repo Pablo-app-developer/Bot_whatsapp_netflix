@@ -35,5 +35,3 @@ export const deliverBook = async (order) => {
     return true;
 };
 
-// Alias para no romper imports viejos mientras migramos
-export const deliverCourse = deliverBook;
