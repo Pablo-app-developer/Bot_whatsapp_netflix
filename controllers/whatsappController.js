@@ -1,12 +1,11 @@
 import { sendWhatsAppMessage, markMessageAsRead } from '../services/whatsappService.js';
 import { getAIResponse } from '../services/geminiService.js';
-import { extractPurchaseIntent, detectService, hasBuyIntent } from '../services/intentService.js';
 import { getPaymentLink } from '../services/paymentService.js';
 import { isAdminCommand, processAdminCommand } from '../services/adminService.js';
 import { deliverCourse } from '../services/credentialService.js';
 import { findOrderByReference, updateOrderStatus } from '../services/orderService.js';
 import { logger } from '../utils/logger.js';
-import { conversationCache, paymentCache } from '../utils/cache.js';
+import { conversationCache } from '../utils/cache.js';
 
 export const verifyWebhook = (req, res) => {
     const mode = req.query['hub.mode'];
@@ -57,59 +56,26 @@ export const handleIncomingMessage = async (req, res) => {
             return;
         }
 
-        // ── Detectar servicio y compra ─────────────────────────────
-        const intent = extractPurchaseIntent(userMessage);
-
-        // Si se menciona un curso, guardarlo en el cache de sesión
-        if (intent.hasServiceMention) {
-            paymentCache.set(`service:${from}`, {
-                serviceId: intent.serviceId,
-                serviceName: intent.service,
-            });
-            logger.info(`💾 Servicio guardado en sesión: ${intent.serviceId}`);
-        }
-
-        // Si hay intención de compra pero el curso no está en el mensaje actual,
-        // buscarlo en el cache de sesión (mencionado antes en la conversación)
-        let targetService = null;
-        if (intent.hasBuyIntent) {
-            if (intent.serviceId) {
-                targetService = { serviceId: intent.serviceId, serviceName: intent.service };
-            } else {
-                const cached = paymentCache.get(`service:${from}`);
-                if (cached) {
-                    targetService = cached;
-                    logger.info(`📦 Servicio recuperado del cache: ${cached.serviceId}`);
-                }
-            }
-        }
-
-        const shouldSendLink = intent.hasBuyIntent && !!targetService;
-
-        // ── Respuesta IA ───────────────────────────────────────────
+        // ── Respuesta IA (con function calling) ────────────────────
         const history = conversationCache.get(from) || [];
         history.push({ role: 'user', content: userMessage, timestamp: new Date().toISOString() });
 
-        const responseText = await getAIResponse(history, shouldSendLink ? {
-            forceCheckout: true,
-            service: targetService?.serviceName,
-            plan: 'Curso',
-        } : {});
+        const { text, action } = await getAIResponse(history);
 
-        history.push({ role: 'assistant', content: responseText, timestamp: new Date().toISOString() });
+        history.push({ role: 'assistant', content: text, timestamp: new Date().toISOString() });
         conversationCache.set(from, history.slice(-20));
 
-        await sendWhatsAppMessage(from, { type: 'text', text: { body: responseText } });
+        await sendWhatsAppMessage(from, { type: 'text', text: { body: text } });
 
-        // ── Enviar link de pago ────────────────────────────────────
-        if (shouldSendLink) {
+        // ── Si la IA decidió enviar link de pago ───────────────────
+        if (action?.type === 'send_payment_link') {
             try {
-                const paymentData = await getPaymentLink(targetService.serviceId, targetService.serviceName, from);
+                const paymentData = await getPaymentLink(action.serviceId, action.serviceName, from);
                 await sendWhatsAppMessage(from, {
                     type: 'text',
                     text: { body: `💳 *Link de pago seguro:*\n\n${paymentData.url}\n\n✅ El material se envía automáticamente por WhatsApp al confirmar el pago.` },
                 });
-                logger.info(`💳 Link enviado a ${from} para ${targetService.serviceId}`);
+                logger.info(`💳 Link enviado a ${from} para ${action.serviceId}`);
             } catch (payErr) {
                 logger.error('❌ Error enviando link de pago:', payErr);
                 await sendWhatsAppMessage(from, {

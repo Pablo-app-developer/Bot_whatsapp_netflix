@@ -8,18 +8,28 @@ const groq = () => {
 };
 
 // ─── CATÁLOGO ─────────────────────────────────────────────────────────────────
-// Para agregar un curso: añade una línea con el mismo formato.
-// Para quitarlo: comenta o elimina la línea.
+const COURSE_NAMES = {
+    'hacking-etico': 'Hacking Ético',
+    'python': 'Python desde Cero',
+    'django': 'Django desde Cero',
+    'excel': 'Excel que Sí Usas',
+    'canva': 'Canva Pro en 1 Hora',
+    'copywriting': 'Copywriting para WhatsApp',
+    'productividad': 'Productividad Real',
+    'redes-sociales': 'Redes Sociales que Venden',
+    'finanzas': 'Finanzas Personales desde Cero',
+};
+
 const CATALOGO = `
-🔐 Hacking Ético — Kali Linux, Metasploit, OSINT, WiFi hacking, SQLi, XSS, Bug Bounty, Malware y más. +30 módulos.
-🐍 Python desde Cero — variables, funciones, POO, automatización y proyectos reales desde cero.
-🌐 Django desde Cero — crea aplicaciones web con Python: modelos, vistas, autenticación, deploy.
-📊 Excel que Sí Usas — fórmulas avanzadas, tablas dinámicas, dashboards y automatización con macros.
-🎨 Canva Pro en 1 Hora — diseño profesional de posts, logos y presentaciones sin ser diseñador.
-📝 Copywriting para WhatsApp — técnicas de escritura persuasiva aplicadas a ventas digitales.
-🧠 Productividad Real — sistemas y herramientas para rendir más sin quemarte.
-📱 Redes Sociales que Venden — estrategia de contenido para convertir seguidores en clientes.
-💰 Finanzas Personales desde Cero — ahorro, inversión y libertad financiera desde Colombia.
+🔐 hacking-etico — Hacking Ético — Kali Linux, Metasploit, OSINT, WiFi hacking, SQLi, XSS, Bug Bounty, Malware y más. +30 módulos.
+🐍 python — Python desde Cero — variables, funciones, POO, automatización y proyectos reales desde cero.
+🌐 django — Django desde Cero — crea aplicaciones web con Python: modelos, vistas, autenticación, deploy.
+📊 excel — Excel que Sí Usas — fórmulas avanzadas, tablas dinámicas, dashboards y automatización con macros.
+🎨 canva — Canva Pro en 1 Hora — diseño profesional de posts, logos y presentaciones sin ser diseñador.
+📝 copywriting — Copywriting para WhatsApp — técnicas de escritura persuasiva aplicadas a ventas digitales.
+🧠 productividad — Productividad Real — sistemas y herramientas para rendir más sin quemarte.
+📱 redes-sociales — Redes Sociales que Venden — estrategia de contenido para convertir seguidores en clientes.
+💰 finanzas — Finanzas Personales desde Cero — ahorro, inversión y libertad financiera desde Colombia.
 `.trim();
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -33,45 +43,60 @@ TONO:
 
 FLUJO DE VENTA — síguelo siempre:
 1. Si preguntan por cursos en general → pregunta UNA sola vez por el área (seguridad, programación, diseño, negocios).
-2. Si mencionan un tema (ej: "hacking") → da el pitch del curso en 2 líneas con los temas más impactantes, el precio y pregunta "¿Te lo mandamos?".
-3. Si dicen "sí", "listo", "dale", "me interesa", "ok" o cualquier confirmación → responde SOLO: "Listo, aquí el link 👇" — nada más.
+2. Si mencionan un tema (ej: "hacking", "algo para emprender") → recomienda el curso más adecuado del catálogo con pitch de 2 líneas, precio, y pregunta "¿Te lo mandamos?".
+3. Si el cliente confirma con "sí", "dale", "listo", "ok", "perfecto", "va", o cualquier señal de aceptación (incluso implícita por contexto) → LLAMA LA TOOL send_payment_link con el slug del curso que ofreciste, y responde SOLO: "Listo, aquí el link 👇". Nada más de texto.
 4. NUNCA preguntes "¿quieres saber más?" ni "¿quieres el contenido?". Si hay interés, mueve al cierre.
 
-EJEMPLO DE CONVERSACIÓN IDEAL:
-Cliente: "quiero info sobre los cursos"
-Tú: "Tenemos cursos técnicos desde $10.000 COP. ¿Qué área te interesa — seguridad, programación, diseño o negocios?"
-
+EJEMPLO 1:
 Cliente: "hacking"
-Tú: "El de Hacking Ético es el más completo — Kali Linux, Metasploit, WiFi hacking, Bug Bounty, SQLi y +30 módulos. Todo práctico. $10.000 COP, acceso de por vida. ¿Te lo mandamos?"
-
+Tú: "El de Hacking Ético es el más completo — Kali Linux, Metasploit, WiFi hacking, Bug Bounty y +30 módulos. $10.000 COP, acceso de por vida. ¿Te lo mandamos?"
 Cliente: "sí"
-Tú: "Listo, aquí el link 👇"
+Tú: [llamar tool send_payment_link con "hacking-etico"] "Listo, aquí el link 👇"
+
+EJEMPLO 2:
+Cliente: "algo para emprender un negocio"
+Tú: "El de Finanzas Personales desde Cero te sirve — ahorro, inversión y libertad financiera desde Colombia. $10.000 COP. ¿Te lo mandamos?"
+Cliente: "va"
+Tú: [llamar tool send_payment_link con "finanzas"] "Listo, aquí el link 👇"
 
 REGLAS:
 - Nunca inventes precios ni temas fuera del catálogo.
-- Si preguntan por algo que no vendemos: "ese tema no lo tenemos aún, pero si te interesa [tema relacionado] sí tenemos algo."
+- NUNCA pegues un link de pago en el texto — usa SIEMPRE la tool send_payment_link para eso.
 - Si preguntan si eres un bot: "soy el asistente de Formación Para Todos."
 - Cada pregunta extra que hagas es una venta perdida.
 
-CATÁLOGO (todos a $10.000 COP — entrega inmediata por WhatsApp):
+CATÁLOGO (formato: slug — nombre — descripción, todos $10.000 COP, entrega inmediata por WhatsApp):
 ${CATALOGO}
 
 ENTREGA:
 - Al pagar reciben el material por este mismo WhatsApp de forma automática.
 - Acceso de por vida.`;
 
-export const getAIResponse = async (conversationHistory, options = {}) => {
+const TOOLS = [{
+    type: 'function',
+    function: {
+        name: 'send_payment_link',
+        description: 'Envía un link de pago de Mercado Pago al cliente. Úsalo cuando el cliente confirme (explícita o implícitamente) que quiere comprar un curso que le acabas de ofrecer. Ejemplos de confirmación: "sí", "dale", "listo", "va", "ok", "perfecto", "me interesa", "lo quiero".',
+        parameters: {
+            type: 'object',
+            properties: {
+                course_slug: {
+                    type: 'string',
+                    enum: Object.keys(COURSE_NAMES),
+                    description: 'Slug del curso que el cliente quiere comprar',
+                },
+            },
+            required: ['course_slug'],
+        },
+    },
+}];
+
+export const getAIResponse = async (conversationHistory) => {
     try {
         const messages = conversationHistory.map(msg => ({
             role: msg.role === 'assistant' ? 'assistant' : 'user',
             content: msg.content,
         }));
-
-        // Inject checkout instruction into last user message if needed
-        if (options.forceCheckout && options.service && options.plan && messages.length > 0) {
-            const last = messages[messages.length - 1];
-            last.content += `\n\n[SISTEMA: El usuario quiere comprar ${options.service} - ${options.plan}. Confirma la compra de forma breve y amigable.]`;
-        }
 
         const response = await groq().chat.completions.create({
             model: 'openai/gpt-oss-20b',
@@ -79,27 +104,51 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
                 { role: 'system', content: SYSTEM_PROMPT },
                 ...messages,
             ],
+            tools: TOOLS,
+            tool_choice: 'auto',
             temperature: 0.6,
             max_tokens: 400,
         });
 
         const msg = response.choices[0]?.message;
-        const text = (msg?.content?.trim()) || (msg?.reasoning?.trim());
+        const text = (msg?.content?.trim()) || (msg?.reasoning?.trim()) || '';
 
-        if (!text) {
-            logger.error('⚠️ AI response empty. Raw message:', JSON.stringify(msg));
+        let action = null;
+        const toolCall = msg?.tool_calls?.[0];
+        if (toolCall?.function?.name === 'send_payment_link') {
+            try {
+                const args = typeof toolCall.function.arguments === 'string'
+                    ? JSON.parse(toolCall.function.arguments)
+                    : toolCall.function.arguments;
+                const slug = args.course_slug;
+                if (COURSE_NAMES[slug]) {
+                    action = {
+                        type: 'send_payment_link',
+                        serviceId: slug,
+                        serviceName: COURSE_NAMES[slug],
+                    };
+                    logger.info('🛒 Tool call: send_payment_link', { slug });
+                } else {
+                    logger.warn('⚠️ Tool devolvió slug desconocido:', slug);
+                }
+            } catch (e) {
+                logger.error('❌ Error parseando args de tool:', e.message);
+            }
         }
 
-        logger.info('🤖 AI Response generated:', {
-            length: text?.length,
-            preview: text?.substring(0, 50),
+        logger.info('🤖 AI Response:', {
+            length: text.length,
+            preview: text.substring(0, 60),
+            action: action?.type,
         });
 
-        return text || 'Tuve un problema técnico un momento. ¿Me repites tu pregunta?';
+        return {
+            text: text || (action ? 'Listo, aquí el link 👇' : 'Tuve un problema técnico un momento. ¿Me repites tu pregunta?'),
+            action,
+        };
 
     } catch (error) {
-        // Groq openai/gpt-oss-20b a veces envuelve la respuesta en un tool_call malformado.
-        // El texto real esta en failed_generation despues de "arguments":
+        // Rescate para el bug conocido de gpt-oss-20b con Harmony format
         const failed = error?.error?.failed_generation || error?.body?.error?.failed_generation;
         if (failed && typeof failed === 'string') {
             const match = failed.match(/"arguments"\s*:\s*([\s\S]*?)\}?\s*$/);
@@ -107,7 +156,7 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
                 const rescued = match[1].trim().replace(/^["']|["']$/g, '').trim();
                 if (rescued.length > 5) {
                     logger.info('🔧 Respuesta rescatada de failed_generation:', rescued.substring(0, 60));
-                    return rescued;
+                    return { text: rescued, action: null };
                 }
             }
         }
@@ -115,10 +164,11 @@ export const getAIResponse = async (conversationHistory, options = {}) => {
         logger.error('❌ Error getting AI response:', {
             message: error?.message,
             status: error?.status,
-            code: error?.code,
-            type: error?.type,
             body: error?.response?.data || error?.error,
         });
-        return 'Uy parce, se me trabó el cel un segundo 😅 ¿Me repites qué necesitabas?';
+        return {
+            text: 'Uy parce, se me trabó el cel un segundo 😅 ¿Me repites qué necesitabas?',
+            action: null,
+        };
     }
 };
