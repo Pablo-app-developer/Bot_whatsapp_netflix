@@ -1,36 +1,18 @@
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
 import { sendWhatsAppMessage } from './whatsappService.js';
+import { getBookById } from './catalogService.js';
 import { logger } from '../utils/logger.js';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const coursesPath = join(__dirname, '../data/courses.json');
+export const deliverBook = async (order) => {
+    const { phone, bookId, reference } = order;
+    const book = getBookById(bookId);
 
-const getCourses = () => JSON.parse(readFileSync(coursesPath, 'utf8'));
-
-export const deliverCourse = async (order) => {
-    const { phone, service: courseSlug, reference } = order;
-    const courses = getCourses();
-    const course = courses[courseSlug];
-
-    if (!course) {
-        logger.error(`❌ Curso no encontrado en catálogo: ${courseSlug}`);
-        await sendWhatsAppMessage(phone, {
-            type: 'text',
-            text: { body: '✅ Pago confirmado. Estamos preparando tu acceso, te lo enviamos en unos minutos.' },
-        });
-        return false;
-    }
-
-    if (!course.driveLink) {
-        // Curso sin link aún — notificar admin
-        logger.error(`❌ Sin link para curso: ${courseSlug}`);
+    if (!book) {
+        logger.error(`❌ Libro no encontrado en catálogo: ${bookId}`);
         const adminPhone = process.env.ADMIN_PHONE;
         if (adminPhone) {
             await sendWhatsAppMessage(adminPhone, {
                 type: 'text',
-                text: { body: `🚨 *Pago recibido sin link configurado*\nCurso: ${course.name}\nCliente: ${phone}\nRef: ${reference}\n\n⚡ Agrega el link en data/courses.json` },
+                text: { body: `🚨 *Pago recibido con bookId inválido*\nID: ${bookId}\nCliente: ${phone}\nRef: ${reference}` },
             });
         }
         await sendWhatsAppMessage(phone, {
@@ -42,13 +24,16 @@ export const deliverCourse = async (order) => {
 
     const msg =
         `✅ *Pago confirmado — acceso listo* 🎉\n\n` +
-        `${course.emoji} *${course.name}*\n\n` +
-        `📂 *Tu material de estudio:*\n` +
-        `${course.driveLink}\n\n` +
+        `📖 *${book.title}*\n` +
+        `📁 ${book.category}\n\n` +
+        `📂 *Tu material:*\n${book.url}\n\n` +
         `📌 Guarda este link — es tu acceso de por vida.\n` +
         `Cualquier problema responde aquí mismo.`;
 
     await sendWhatsAppMessage(phone, { type: 'text', text: { body: msg } });
-    logger.info(`✅ Curso entregado a ${phone}: ${course.name}`);
+    logger.info(`✅ Libro entregado a ${phone}: ${book.title}`);
     return true;
 };
+
+// Alias para no romper imports viejos mientras migramos
+export const deliverCourse = deliverBook;

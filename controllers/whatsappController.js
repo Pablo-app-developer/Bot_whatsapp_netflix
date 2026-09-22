@@ -2,7 +2,7 @@ import { sendWhatsAppMessage, markMessageAsRead } from '../services/whatsappServ
 import { getAIResponse } from '../services/geminiService.js';
 import { getPaymentLink } from '../services/paymentService.js';
 import { isAdminCommand, processAdminCommand } from '../services/adminService.js';
-import { deliverCourse } from '../services/credentialService.js';
+import { deliverBook } from '../services/credentialService.js';
 import { findOrderByReference, updateOrderStatus } from '../services/orderService.js';
 import { logger } from '../utils/logger.js';
 import { conversationCache } from '../utils/cache.js';
@@ -70,12 +70,12 @@ export const handleIncomingMessage = async (req, res) => {
         // ── Si la IA decidió enviar link de pago ───────────────────
         if (action?.type === 'send_payment_link') {
             try {
-                const paymentData = await getPaymentLink(action.serviceId, action.serviceName, from);
+                const paymentData = await getPaymentLink(action.bookId, action.bookTitle, from);
                 await sendWhatsAppMessage(from, {
                     type: 'text',
-                    text: { body: `💳 *Link de pago seguro:*\n\n${paymentData.url}\n\n✅ El material se envía automáticamente por WhatsApp al confirmar el pago.` },
+                    text: { body: `💳 *Link de pago seguro:*\n\n${paymentData.url}\n\n✅ El libro se envía automáticamente por WhatsApp al confirmar el pago.` },
                 });
-                logger.info(`💳 Link enviado a ${from} para ${action.serviceId}`);
+                logger.info(`💳 Link enviado a ${from} para book ${action.bookId}`);
             } catch (payErr) {
                 logger.error('❌ Error enviando link de pago:', payErr);
                 await sendWhatsAppMessage(from, {
@@ -110,7 +110,7 @@ export const handleWompiWebhook = async (req, res) => {
         if (order.status === 'approved') return;
 
         updateOrderStatus(transaction.reference, 'approved');
-        await deliverCourse(order);
+        await deliverBook(order);
 
     } catch (err) {
         logger.error('❌ Wompi webhook error:', err);

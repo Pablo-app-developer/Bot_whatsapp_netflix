@@ -1,25 +1,26 @@
 import { createOrder, findOrderByReference, updateOrderStatus } from './orderService.js';
-import { deliverCourse } from './credentialService.js';
+import { deliverBook } from './credentialService.js';
 import { logger } from '../utils/logger.js';
 
 const MP_ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN;
 const BASE_URL = process.env.BASE_URL || 'https://botwhatsappnetflix-production.up.railway.app';
 
-export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
+export const getPaymentLink = async (bookId, bookTitle, customerPhone) => {
     const amount = 10000;
-    const reference = `FPT-${courseSlug}-${Date.now()}-${customerPhone.slice(-4)}`;
+    const reference = `FPT-book${bookId}-${Date.now()}-${customerPhone.slice(-4)}`;
 
     createOrder({
         reference,
         phone: customerPhone,
-        service: courseSlug,
-        plan: 'curso',
+        bookId,
+        service: `book_${bookId}`,
+        plan: 'libro',
         amount,
     });
 
     const body = {
         items: [{
-            title: `Curso: ${courseName}`,
+            title: `Libro: ${bookTitle}`,
             quantity: 1,
             unit_price: amount,
             currency_id: 'COP',
@@ -65,9 +66,9 @@ export const getPaymentLink = async (courseSlug, courseName, customerPhone) => {
     // MP_MODE=production usa init_point, cualquier otro valor (o vacío) usa sandbox_init_point
     const url = process.env.MP_MODE === 'production' ? data.init_point : data.sandbox_init_point;
 
-    logger.info('💳 Link MP generado:', { course: courseSlug, reference, url });
+    logger.info('💳 Link MP generado:', { bookId, reference, url });
 
-    return { url, reference, amount, course: courseSlug };
+    return { url, reference, amount, bookId };
 };
 
 export const handleMPWebhook = async (webhookData) => {
@@ -103,7 +104,7 @@ export const handleMPWebhook = async (webhookData) => {
         }
 
         updateOrderStatus(payment.external_reference, 'approved');
-        await deliverCourse(order);
+        await deliverBook(order);
 
         logger.info('✅ Curso entregado:', { reference: payment.external_reference, phone: order.phone });
         return { processed: true };

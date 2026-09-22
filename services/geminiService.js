@@ -1,5 +1,6 @@
 import Groq from 'groq-sdk';
 import { logger } from '../utils/logger.js';
+import { listCategories, listBooksByCategory, searchBooks, getBookById } from './catalogService.js';
 
 let _groq = null;
 const groq = () => {
@@ -7,170 +8,209 @@ const groq = () => {
     return _groq;
 };
 
-// ─── CATÁLOGO ─────────────────────────────────────────────────────────────────
-const COURSE_NAMES = {
-    'hacking-etico': 'Hacking Ético',
-    'python': 'Python desde Cero',
-    'django': 'Django desde Cero',
-    'excel': 'Excel que Sí Usas',
-    'canva': 'Canva Pro en 1 Hora',
-    'copywriting': 'Copywriting para WhatsApp',
-    'productividad': 'Productividad Real',
-    'redes-sociales': 'Redes Sociales que Venden',
-    'finanzas': 'Finanzas Personales desde Cero',
-};
+const MODEL = 'openai/gpt-oss-20b';
 
-const CATALOGO = `
-🔐 hacking-etico — Hacking Ético — Kali Linux, Metasploit, OSINT, WiFi hacking, SQLi, XSS, Bug Bounty, Malware y más. +30 módulos.
-🐍 python — Python desde Cero — variables, funciones, POO, automatización y proyectos reales desde cero.
-🌐 django — Django desde Cero — crea aplicaciones web con Python: modelos, vistas, autenticación, deploy.
-📊 excel — Excel que Sí Usas — fórmulas avanzadas, tablas dinámicas, dashboards y automatización con macros.
-🎨 canva — Canva Pro en 1 Hora — diseño profesional de posts, logos y presentaciones sin ser diseñador.
-📝 copywriting — Copywriting para WhatsApp — técnicas de escritura persuasiva aplicadas a ventas digitales.
-🧠 productividad — Productividad Real — sistemas y herramientas para rendir más sin quemarte.
-📱 redes-sociales — Redes Sociales que Venden — estrategia de contenido para convertir seguidores en clientes.
-💰 finanzas — Finanzas Personales desde Cero — ahorro, inversión y libertad financiera desde Colombia.
-`.trim();
-// ──────────────────────────────────────────────────────────────────────────────
+const buildCategoryListText = () =>
+    listCategories()
+        .map(c => `• ${c.name} (${c.count} libros)`)
+        .join('\n');
 
-const SYSTEM_PROMPT = `Eres el asistente de ventas de "Formación Para Todos" (formacionparatodos.online), plataforma colombiana de cursos técnicos digitales. Tu nombre es Valeria.
+const buildSystemPrompt = () => `Eres el asistente de ventas de "Formación Para Todos" (formacionparatodos.online), una biblioteca digital de libros técnicos. Tu nombre es Valeria.
+
+CADA LIBRO CUESTA $10.000 COP y se entrega automáticamente por WhatsApp al pagar (link de Google Drive con el material, acceso de por vida).
 
 TONO:
-- Directo, confiado y sin rodeos. Como un buen vendedor, no como un asistente de soporte.
-- WhatsApp: frases cortas, sin párrafos. Máximo 3 líneas por mensaje.
-- Emojis solo cuando refuerzan el mensaje. Nunca 🤔 ni emojis de duda.
-- Nada de "con gusto", "claro que sí", ni frases de call center.
+- Directa, confiada, sin rodeos. Como una buena vendedora, no como asistente de soporte.
+- WhatsApp: frases cortas. Máximo 3 líneas por mensaje.
+- Nada de "con gusto", "claro que sí", frases de call center.
+- Emojis con moderación. Nunca 🤔.
 
-FLUJO DE VENTA — síguelo siempre EN ESTE ORDEN:
+CATÁLOGO — 17 categorías disponibles:
+${buildCategoryListText()}
 
-TURNO 1 (mención de tema o interés): mensajes como "hacking", "estoy interesado en X", "cuéntame de Y", "info del curso Z", "quiero saber de W" → SOLO responde con el pitch (2 líneas + precio + "¿Te lo mandamos?"). NO llames ninguna tool. NO envíes link. Esto es solo interés, aún no ha confirmado la compra.
+TIENES 3 HERRAMIENTAS:
+1. list_books(category) → muestra los títulos de una categoría. Úsala cuando el cliente elige una categoría del listado.
+2. search_books(query) → busca libros por palabra clave (ej. "kubernetes", "python", "chatgpt"). Úsala cuando el cliente pide un tema específico que no coincide con una categoría entera.
+3. send_payment_link(book_id) → genera el link de pago. Úsala SOLO cuando el cliente confirme que quiere comprar un libro específico (después de que le mostraste el título).
 
-TURNO 2 (confirmación tras el pitch): SOLO cuando el cliente responda algo como "sí", "dale", "listo", "ok", "perfecto", "va", "mándalo", "lo quiero" DESPUÉS de que le hiciste el pitch → AHÍ SÍ llama send_payment_link con el slug correcto y responde SOLO: "Listo, aquí el link 👇".
+FLUJO DE VENTA — 3 pasos:
+PASO 1: Cliente saluda o pregunta general → muéstrale las categorías principales (elige 5-6 relevantes de la lista de arriba) y pregunta cuál le interesa.
+PASO 2: Cliente elige categoría o tema → LLAMA list_books o search_books, presenta 5-8 títulos numerados y pregunta cuál quiere.
+PASO 3: Cliente confirma un libro específico (por número o título) → LLAMA send_payment_link con el book_id correcto y responde SOLO: "Listo, aquí el link 👇".
 
-Si el cliente dice "quiero el de hacking" en su PRIMER mensaje sobre el tema, eso NO es confirmación — es interés. Responde con pitch y pregunta "¿Te lo mandamos?". Solo tras un segundo mensaje afirmativo llamas la tool.
+REGLAS CRÍTICAS:
+- NUNCA muestres tu razonamiento interno, análisis de reglas ni comentarios tipo "User said... According to rules...". Solo la respuesta directa al cliente.
+- NUNCA inventes títulos que no estén en el catálogo. Si el cliente pide algo, usa search_books primero.
+- NUNCA pegues links de pago manualmente en el texto — SIEMPRE usa send_payment_link.
+- NUNCA llames send_payment_link en el primer turno sin haber mostrado el libro específico primero.
+- Si preguntan si eres un bot: "soy la asistente de Formación Para Todos."
+- Cada pregunta extra que hagas es una venta perdida.`;
 
-REGLAS:
-- NUNCA pegues un link de pago en el texto — usa SIEMPRE la tool send_payment_link para eso.
-- NUNCA muestres tu razonamiento interno, análisis de reglas ni comentarios tipo "According to rules...". Solo la respuesta directa al cliente.
-- NUNCA preguntes "¿quieres saber más?" ni "¿quieres el contenido?". Si hay interés, mueve al cierre con el pitch.
-- Nunca inventes precios ni temas fuera del catálogo.
-- Si preguntan si eres un bot: "soy el asistente de Formación Para Todos."
-
-EJEMPLO CORRECTO:
-Cliente: "estoy interesado en el curso de hacking"
-Tú: "El de Hacking Ético es el más completo — Kali Linux, Metasploit, WiFi hacking, Bug Bounty y +30 módulos. $10.000 COP, acceso de por vida. ¿Te lo mandamos?"
-Cliente: "sí"
-Tú: [llama tool send_payment_link con "hacking-etico"] "Listo, aquí el link 👇"
-
-EJEMPLO INCORRECTO (NO hagas esto):
-Cliente: "estoy interesado en el curso de hacking"
-Tú: [llama tool] "Listo, aquí el link" ← MAL, aún no confirmó, primero el pitch.
-
-CATÁLOGO (formato: slug — nombre — descripción, todos $10.000 COP, entrega inmediata por WhatsApp):
-${CATALOGO}
-
-ENTREGA:
-- Al pagar reciben el material por este mismo WhatsApp de forma automática.
-- Acceso de por vida.`;
-
-const TOOLS = [{
-    type: 'function',
-    function: {
-        name: 'send_payment_link',
-        description: 'Envía un link de pago de Mercado Pago al cliente. Úsalo cuando el cliente confirme (explícita o implícitamente) que quiere comprar un curso que le acabas de ofrecer. Ejemplos de confirmación: "sí", "dale", "listo", "va", "ok", "perfecto", "me interesa", "lo quiero".',
-        parameters: {
-            type: 'object',
-            properties: {
-                course_slug: {
-                    type: 'string',
-                    enum: Object.keys(COURSE_NAMES),
-                    description: 'Slug del curso que el cliente quiere comprar',
+const TOOLS = [
+    {
+        type: 'function',
+        function: {
+            name: 'list_books',
+            description: 'Devuelve una lista de libros de una categoría específica. Usa esto cuando el cliente elige una categoría del catálogo.',
+            parameters: {
+                type: 'object',
+                properties: {
+                    category: {
+                        type: 'string',
+                        description: 'Nombre de la categoría exacta o parcial (ej. "IA y Machine Learning", "Cloud", "DevOps")',
+                    },
                 },
+                required: ['category'],
             },
-            required: ['course_slug'],
         },
     },
-}];
+    {
+        type: 'function',
+        function: {
+            name: 'search_books',
+            description: 'Busca libros por palabras clave (título, tema, tecnología). Usa esto cuando el cliente pide un tema específico como "kubernetes", "chatgpt", "postgresql".',
+            parameters: {
+                type: 'object',
+                properties: {
+                    query: {
+                        type: 'string',
+                        description: 'Términos a buscar en los títulos y categorías',
+                    },
+                },
+                required: ['query'],
+            },
+        },
+    },
+    {
+        type: 'function',
+        function: {
+            name: 'send_payment_link',
+            description: 'Envía el link de pago Mercado Pago al cliente. Úsalo SOLO cuando el cliente confirme que quiere comprar un libro específico del catálogo.',
+            parameters: {
+                type: 'object',
+                properties: {
+                    book_id: {
+                        type: 'integer',
+                        description: 'ID numérico del libro (viene de list_books o search_books)',
+                    },
+                },
+                required: ['book_id'],
+            },
+        },
+    },
+];
+
+const executeTool = (name, args) => {
+    if (name === 'list_books') {
+        const result = listBooksByCategory(args.category);
+        if (!result) return { error: `Categoría "${args.category}" no encontrada` };
+        return result;
+    }
+    if (name === 'search_books') {
+        const results = searchBooks(args.query);
+        return { query: args.query, results };
+    }
+    return { error: `Tool desconocida: ${name}` };
+};
+
+const parseArgs = (raw) => {
+    try {
+        return typeof raw === 'string' ? JSON.parse(raw) : raw;
+    } catch {
+        return {};
+    }
+};
 
 export const getAIResponse = async (conversationHistory) => {
     try {
-        const messages = conversationHistory.map(msg => ({
-            role: msg.role === 'assistant' ? 'assistant' : 'user',
-            content: msg.content,
-        }));
+        const systemPrompt = buildSystemPrompt();
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            ...conversationHistory.map(m => ({
+                role: m.role === 'assistant' ? 'assistant' : 'user',
+                content: m.content,
+            })),
+        ];
 
-        const response = await groq().chat.completions.create({
-            model: 'openai/gpt-oss-20b',
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                ...messages,
-            ],
-            tools: TOOLS,
-            tool_choice: 'auto',
-            temperature: 0.6,
-            max_tokens: 400,
-        });
+        // Loop hasta 3 vueltas por si el LLM encadena tools (list -> search -> send)
+        for (let turn = 0; turn < 3; turn++) {
+            const response = await groq().chat.completions.create({
+                model: MODEL,
+                messages,
+                tools: TOOLS,
+                tool_choice: 'auto',
+                temperature: 0.5,
+                max_tokens: 500,
+            });
 
-        const msg = response.choices[0]?.message;
-        // NUNCA usar msg.reasoning como texto — es el chain-of-thought interno de gpt-oss.
-        const text = msg?.content?.trim() || '';
+            const msg = response.choices[0]?.message;
+            const toolCall = msg?.tool_calls?.[0];
 
-        let action = null;
-        const toolCall = msg?.tool_calls?.[0];
-        if (toolCall?.function?.name === 'send_payment_link') {
-            try {
-                const args = typeof toolCall.function.arguments === 'string'
-                    ? JSON.parse(toolCall.function.arguments)
-                    : toolCall.function.arguments;
-                const slug = args.course_slug;
-                if (COURSE_NAMES[slug]) {
-                    action = {
-                        type: 'send_payment_link',
-                        serviceId: slug,
-                        serviceName: COURSE_NAMES[slug],
-                    };
-                    logger.info('🛒 Tool call: send_payment_link', { slug });
-                } else {
-                    logger.warn('⚠️ Tool devolvió slug desconocido:', slug);
-                }
-            } catch (e) {
-                logger.error('❌ Error parseando args de tool:', e.message);
+            // Sin tool → respuesta final de texto
+            if (!toolCall) {
+                const text = msg?.content?.trim() || '';
+                logger.info('🤖 AI Response:', { turn, length: text.length, preview: text.substring(0, 60) });
+                return { text: text || 'Cuéntame qué categoría te interesa 📚', action: null };
             }
+
+            const name = toolCall.function?.name;
+            const args = parseArgs(toolCall.function?.arguments);
+            logger.info(`🛠️  Tool call: ${name}`, args);
+
+            // Tool terminal: genera link de pago
+            if (name === 'send_payment_link') {
+                const book = getBookById(args.book_id);
+                if (!book) {
+                    logger.warn('⚠️ Tool send_payment_link con id inválido:', args.book_id);
+                    // Agregamos el error como tool_result y dejamos que el modelo continúe
+                    messages.push(msg);
+                    messages.push({
+                        role: 'tool',
+                        tool_call_id: toolCall.id,
+                        content: JSON.stringify({ error: 'book_id no existe. Usa list_books o search_books primero.' }),
+                    });
+                    continue;
+                }
+                const text = msg?.content?.trim() || 'Listo, aquí el link 👇';
+                return {
+                    text,
+                    action: { type: 'send_payment_link', bookId: book.id, bookTitle: book.title },
+                };
+            }
+
+            // Tool de datos: ejecutamos y damos otra vuelta
+            const toolResult = executeTool(name, args);
+            messages.push(msg);
+            messages.push({
+                role: 'tool',
+                tool_call_id: toolCall.id,
+                content: JSON.stringify(toolResult),
+            });
         }
 
-        logger.info('🤖 AI Response:', {
-            length: text.length,
-            preview: text.substring(0, 60),
-            action: action?.type,
-        });
-
-        return {
-            text: text || (action ? 'Listo, aquí el link 👇' : 'Tuve un problema técnico un momento. ¿Me repites tu pregunta?'),
-            action,
-        };
+        // Si agotamos las vueltas sin respuesta final
+        logger.warn('⚠️ Loop de tools agotado sin respuesta final');
+        return { text: 'Cuéntame qué tema te interesa y te muestro qué tengo 📚', action: null };
 
     } catch (error) {
-        // Rescate para el bug conocido de gpt-oss-20b con Harmony format
+        // Rescate del bug de gpt-oss-20b con Harmony format
         const failed = error?.error?.failed_generation || error?.body?.error?.failed_generation;
         if (failed && typeof failed === 'string') {
             const match = failed.match(/"arguments"\s*:\s*([\s\S]*?)\}?\s*$/);
             if (match && match[1]) {
                 const rescued = match[1].trim().replace(/^["']|["']$/g, '').trim();
                 if (rescued.length > 5) {
-                    logger.info('🔧 Respuesta rescatada de failed_generation:', rescued.substring(0, 60));
+                    logger.info('🔧 Rescatado de failed_generation:', rescued.substring(0, 60));
                     return { text: rescued, action: null };
                 }
             }
         }
 
-        logger.error('❌ Error getting AI response:', {
+        logger.error('❌ Error AI:', {
             message: error?.message,
             status: error?.status,
             body: error?.response?.data || error?.error,
         });
-        return {
-            text: 'Uy parce, se me trabó el cel un segundo 😅 ¿Me repites qué necesitabas?',
-            action: null,
-        };
+        return { text: 'Uy parce, se me trabó el cel un segundo 😅 ¿Me repites?', action: null };
     }
 };

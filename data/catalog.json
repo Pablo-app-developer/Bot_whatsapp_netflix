@@ -1,0 +1,2606 @@
+[
+  {
+    "id": 1,
+    "category": "Arquitectura de Software",
+    "title": "Aprendizaje de estilos de API",
+    "url": "https://drive.google.com/drive/folders/1pfs3X03qwhIn7aBD13mMbx2YLj3E7nID"
+  },
+  {
+    "id": 2,
+    "category": "Arquitectura de Software",
+    "title": "Aprendizaje del Diseño Orientado al Dominio",
+    "url": "https://drive.google.com/drive/folders/1o_gPaKN2i205L5qhPO7sR7DCtQ5ac8HY"
+  },
+  {
+    "id": 3,
+    "category": "Arquitectura de Software",
+    "title": "Arquitectura a escala 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1GHBaBA5cAelLLn-44L07yLFPAaHg95nx"
+  },
+  {
+    "id": 4,
+    "category": "Arquitectura de Software",
+    "title": "Arquitectura de software Las partes difíciles",
+    "url": "https://drive.google.com/drive/folders/1OKAqPjGej73NZscGh-vCgRrbY85SdVt2"
+  },
+  {
+    "id": 5,
+    "category": "Arquitectura de Software",
+    "title": "Arquitectura empresarial para el negocio digital",
+    "url": "https://drive.google.com/drive/folders/1A5WQc3RlWIIP9tbl_LEoTFd9XqtTBqDh"
+  },
+  {
+    "id": 6,
+    "category": "Arquitectura de Software",
+    "title": "Arquitectura práctica de Salesforce",
+    "url": "https://drive.google.com/drive/folders/1E7Z_r0nbQ_bQQAh6_5Sy2amEByeDV3gS"
+  },
+  {
+    "id": 7,
+    "category": "Arquitectura de Software",
+    "title": "Cómo construir sistemas distribuidos resilientes",
+    "url": "https://drive.google.com/drive/folders/1FqCoZlfzXfUGKyE_lhAjFX1HsMNhCB2C"
+  },
+  {
+    "id": 8,
+    "category": "Arquitectura de Software",
+    "title": "Comprensión de la arquitectura de aplicaciones multirregión",
+    "url": "https://drive.google.com/drive/folders/1UVGhfPfKnXt_09T7e0uwkGninJ8VfIGW"
+  },
+  {
+    "id": 9,
+    "category": "Arquitectura de Software",
+    "title": "Construir aplicaciones sin servidor en Knative",
+    "url": "https://drive.google.com/drive/folders/15LpVie5BkWf7rg2bln_gMdLcBETJosEa"
+  },
+  {
+    "id": 10,
+    "category": "Arquitectura de Software",
+    "title": "Construir arquitecturas Medallion",
+    "url": "https://drive.google.com/drive/folders/1KWk5ufcG_5QnqzYu3DGNvvfru6J2OIdg"
+  },
+  {
+    "id": 11,
+    "category": "Arquitectura de Software",
+    "title": "Construyendo Arquitecturas Evolutivas 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1ky26qsefPkezjEuRgtQwkmKgI2qulqgG"
+  },
+  {
+    "id": 12,
+    "category": "Arquitectura de Software",
+    "title": "Creación de microfrontends 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1HbjLevO5-joOmOGTLFBm5iDlB3oOGixp"
+  },
+  {
+    "id": 13,
+    "category": "Arquitectura de Software",
+    "title": "Creación de microservicios basados en eventos 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/10UQQuajxIDDYUcrhwuM9vOKabScoStDC"
+  },
+  {
+    "id": 14,
+    "category": "Arquitectura de Software",
+    "title": "Descifrar las arquitecturas de datos",
+    "url": "https://drive.google.com/drive/folders/1sSko3d98Fx2gjCj6_LCUL0_1wV3c7w8Z"
+  },
+  {
+    "id": 15,
+    "category": "Arquitectura de Software",
+    "title": "Diseñar API web",
+    "url": "https://drive.google.com/drive/folders/1lxYPZWZSGWh-SiXz4v3cqiWg_At9AqXl"
+  },
+  {
+    "id": 16,
+    "category": "Arquitectura de Software",
+    "title": "Diseñar para la escalabilidad con Erlang OTP",
+    "url": "https://drive.google.com/drive/folders/1X6KW_DD59JDQL68JmQEwbg95dbDqC8z4"
+  },
+  {
+    "id": 17,
+    "category": "Arquitectura de Software",
+    "title": "Diseño de aplicaciones con uso intensivo de datos 2nd Edición",
+    "url": "https://drive.google.com/drive/folders/14syhi1T0P11OC1sGkixq-YTXPPl5b_c6"
+  },
+  {
+    "id": 18,
+    "category": "Arquitectura de Software",
+    "title": "Diseño de aplicaciones intensivas en datos",
+    "url": "https://drive.google.com/drive/folders/1YlB0UzyI6XB1yATf0t7BezQledjUGOqr"
+  },
+  {
+    "id": 19,
+    "category": "Arquitectura de Software",
+    "title": "Diseño de sistemas distribuidos 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1Tn2B2t_xwTWyJ_7frAx5zwI-5P6lrgr7"
+  },
+  {
+    "id": 20,
+    "category": "Arquitectura de Software",
+    "title": "Dominar el reconocimiento de patrones financieros",
+    "url": "https://drive.google.com/drive/folders/11MuVVaispbFWA1Z6y4dfKtksitgZpQjm"
+  },
+  {
+    "id": 21,
+    "category": "Arquitectura de Software",
+    "title": "Dominar la arquitectura API",
+    "url": "https://drive.google.com/drive/folders/1uvI1Ea7TL7_EitCtls5vav515l5uatkL"
+  },
+  {
+    "id": 22,
+    "category": "Arquitectura de Software",
+    "title": "El modelo C4",
+    "url": "https://drive.google.com/drive/folders/1LISCiI3ItOOWJwQXO8-Y5uZf3hssGwRA"
+  },
+  {
+    "id": 23,
+    "category": "Arquitectura de Software",
+    "title": "Facilitar el éxito de los microservicios",
+    "url": "https://drive.google.com/drive/folders/1j5fDCeh1VExLDSa8U3C7VU0NCRF4wkLN"
+  },
+  {
+    "id": 24,
+    "category": "Arquitectura de Software",
+    "title": "Facilitar la arquitectura de software",
+    "url": "https://drive.google.com/drive/folders/1W2KJFZWq3aHy9pSHFnU8utFdP9cIf5PS"
+  },
+  {
+    "id": 25,
+    "category": "Arquitectura de Software",
+    "title": "Fundamentos de la arquitectura de software 2ª edición",
+    "url": "https://drive.google.com/drive/folders/17Mb9uE5vE3ZOqMOkK6aI_45VqssGU0DG"
+  },
+  {
+    "id": 26,
+    "category": "Arquitectura de Software",
+    "title": "Fundamentos de la arquitectura empresarial",
+    "url": "https://drive.google.com/drive/folders/1C6AcZpqytqPnL4GL6fWOonE6EU2nd_cS"
+  },
+  {
+    "id": 27,
+    "category": "Arquitectura de Software",
+    "title": "Libro de cocina de patrones y prácticas de API Web RESTful",
+    "url": "https://drive.google.com/drive/folders/1A1QuwDkvVJpJ6wzWnC3qcCoB7BT4Rc1E"
+  },
+  {
+    "id": 28,
+    "category": "Arquitectura de Software",
+    "title": "Libro de recetas de la API web",
+    "url": "https://drive.google.com/drive/folders/1QDP0KNvNTq4q-js-YsHVjQ7aQQXx0ffl"
+  },
+  {
+    "id": 29,
+    "category": "Arquitectura de Software",
+    "title": "Métricas de arquitectura de software",
+    "url": "https://drive.google.com/drive/folders/10DWUeCluQ7RsnwImW-BSXbQErad24FnA"
+  },
+  {
+    "id": 30,
+    "category": "Arquitectura de Software",
+    "title": "Microservicios En marcha",
+    "url": "https://drive.google.com/drive/folders/1IHFiB310e7o3kUV83pyCfT0Ad9muwpMH"
+  },
+  {
+    "id": 31,
+    "category": "Arquitectura de Software",
+    "title": "Patrones de comunicación",
+    "url": "https://drive.google.com/drive/folders/1QzpmjfAz0OxckT7rKlGFMOQMYniBlH1N"
+  },
+  {
+    "id": 32,
+    "category": "Arquitectura de Software",
+    "title": "Transformación basada en el dominio",
+    "url": "https://drive.google.com/drive/folders/1Emh9SSgJ847Ri7lSLWsTCZQk9nok1U_Q"
+  },
+  {
+    "id": 33,
+    "category": "Blockchain y Web3",
+    "title": "Comprender la DeFi",
+    "url": "https://drive.google.com/drive/folders/17oLXp5lntq4i9uSprA_Wf7sI4N31NNRn"
+  },
+  {
+    "id": 34,
+    "category": "Blockchain y Web3",
+    "title": "Desarrollo práctico de contratos inteligentes con Hyperledger Fabric V2",
+    "url": "https://drive.google.com/drive/folders/1Vl1glJcxfcD21xr6L2pWip4cD4OXfD5u"
+  },
+  {
+    "id": 35,
+    "category": "Blockchain y Web3",
+    "title": "Desarrollo práctico de contratos inteligentes con Solidity y Ethereum",
+    "url": "https://drive.google.com/drive/folders/1UC8qdJqtOxQ5USZ-k1WadX-Hk-KKIski"
+  },
+  {
+    "id": 36,
+    "category": "Blockchain y Web3",
+    "title": "Dominar Blockchain",
+    "url": "https://drive.google.com/drive/folders/1UcNlbn27cZrzbbqv2J4YZms8hS4P9wDy"
+  },
+  {
+    "id": 37,
+    "category": "Blockchain y Web3",
+    "title": "Dominar Ethereum 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1l7BswXTe8jcgQ7yJapVtc6OGft2rUkcq"
+  },
+  {
+    "id": 38,
+    "category": "Certificaciones",
+    "title": "Guía de estudio de Azure AI Engineer Associate (AI-102)",
+    "url": "https://drive.google.com/drive/folders/1SoBAGzkbllNJp6e5Bz9w844B8v6MxjHB"
+  },
+  {
+    "id": 39,
+    "category": "Certificaciones",
+    "title": "Guía de estudio de CompTIA Linux+",
+    "url": "https://drive.google.com/drive/folders/19_SCk1zVKugV7ioPg6fXEVX47aroyYHV"
+  },
+  {
+    "id": 40,
+    "category": "Certificaciones",
+    "title": "Guía de estudio de Fundamentos de Azure (AZ-900)",
+    "url": "https://drive.google.com/drive/folders/1ZVpDwmH60DvBS2PHaQyQh9t48DRVSt_N"
+  },
+  {
+    "id": 41,
+    "category": "Certificaciones",
+    "title": "Guía de estudio de automatización de Ansible para ingenieros certificados por Red Hat (RHCE)",
+    "url": "https://drive.google.com/drive/folders/1k5qDJ1u-KgAXmOR5rdRueQKc6IGh4XPU"
+  },
+  {
+    "id": 42,
+    "category": "Certificaciones",
+    "title": "Guía de estudio de ingeniero de datos asociado certificado por Databricks",
+    "url": "https://drive.google.com/drive/folders/1NzowZUJ0-oZaVNh_Z-CWJrPYJRyY-rJX"
+  },
+  {
+    "id": 43,
+    "category": "Certificaciones",
+    "title": "Guía de estudio del Administrador Certificado de Kubernetes (CKA)",
+    "url": "https://drive.google.com/drive/folders/1uVVFkI-74_oymrHdUWOwokIQCc7xsFZ-"
+  },
+  {
+    "id": 44,
+    "category": "Certificaciones",
+    "title": "Guía de estudio del Especialista certificado en seguridad de Kubernetes (CKS)",
+    "url": "https://drive.google.com/drive/folders/1i5hPC5mD1p89Y1NCKHnNq4ygc6bo4iS1"
+  },
+  {
+    "id": 45,
+    "category": "Certificaciones",
+    "title": "Guía de estudio oficial del Certificado de conocimientos sobre seguridad en la nube (CCSK v5)",
+    "url": "https://drive.google.com/drive/folders/1UpDzTVjBZuaj5epn4jtVqIea2Z4j7haz"
+  },
+  {
+    "id": 46,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para administrador certificado de Kubernetes (CKA) 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1EmPukgclDzw_RXMg90ERU-4Lxkd6uxpY"
+  },
+  {
+    "id": 47,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para administradores de plataformas certificados de Salesforce",
+    "url": "https://drive.google.com/drive/folders/1LFbMC31QL7dPMzGSzjZzMzK62QGtQ2uA"
+  },
+  {
+    "id": 48,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para el examen Microsoft Power BI Data Analyst Associate",
+    "url": "https://drive.google.com/drive/folders/1nW5TP3Gmz4rzqUmD2tuZK1xx41A4oPDX"
+  },
+  {
+    "id": 49,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para la certificación AWS Certified AI Practitioner (AIF-C01)",
+    "url": "https://drive.google.com/drive/folders/1EdtoWGymW-_2Tbhp01Kh77gfRfmESp6P"
+  },
+  {
+    "id": 50,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para la certificación AWS Certified Cloud Practitioner (CLF-C02)",
+    "url": "https://drive.google.com/drive/folders/1Ker8Jfut9jOo-yOh-W_SSC4qHQSUJMYI"
+  },
+  {
+    "id": 51,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para la certificación AWS Certified Data Engineer Associate",
+    "url": "https://drive.google.com/drive/folders/1vc-PHGK77zcl1SIGVY0AdZPjThXr7KLy"
+  },
+  {
+    "id": 52,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para la certificación Microsoft Certified Azure Developer Associate (AZ-204)",
+    "url": "https://drive.google.com/drive/folders/1Vb5DoK1IjRzKbdTvlOet-wCf3tdh9wag"
+  },
+  {
+    "id": 53,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para la certificación Microsoft Fabric Analytics Engineer Associate",
+    "url": "https://drive.google.com/drive/folders/1EHoVtLC3n7xXYw2AMy-sAF5vr8GMrQEt"
+  },
+  {
+    "id": 54,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para la certificación de Databricks como Ingeniero Asociado en IA Generativa",
+    "url": "https://drive.google.com/drive/folders/1EfnRydJn8HzzKvJ_HzWUmxLKY9Vt1pic"
+  },
+  {
+    "id": 55,
+    "category": "Certificaciones",
+    "title": "Guía de estudio para obtener la certificación Certified Ethical Hacker (CEH)",
+    "url": "https://drive.google.com/drive/folders/1BDiqBVfiFL9QTKcL-RpD2DdBRaqJD4-J"
+  },
+  {
+    "id": 56,
+    "category": "Certificaciones",
+    "title": "MLOps con Databricks",
+    "url": "https://drive.google.com/drive/folders/1vSjxOE0ENI8Pm_nvmSvN-TWu9J48X9ak"
+  },
+  {
+    "id": 57,
+    "category": "Ciencia y Matemáticas",
+    "title": "Algoritmos de aprendizaje",
+    "url": "https://drive.google.com/drive/folders/15VZw0_dG37onPZU0ZLStLPo3LuGmqEJV"
+  },
+  {
+    "id": 58,
+    "category": "Ciencia y Matemáticas",
+    "title": "Algoritmos en pocas palabras 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1K33SHHXxxUjcVVDO7O6vp8OgB2BDKQs3"
+  },
+  {
+    "id": 59,
+    "category": "Ciencia y Matemáticas",
+    "title": "Algoritmos gráficos",
+    "url": "https://drive.google.com/drive/folders/1AH0QrJk1gaMBZlndvXOYtfz5mua8xb30"
+  },
+  {
+    "id": 60,
+    "category": "Ciencia y Matemáticas",
+    "title": "Datos sanitarios prácticos",
+    "url": "https://drive.google.com/drive/folders/1qxqvw2XpGEqWyHUgvtuUptIJJ2_jSYgJ"
+  },
+  {
+    "id": 61,
+    "category": "Ciencia y Matemáticas",
+    "title": "Guía de bolsillo Qiskit",
+    "url": "https://drive.google.com/drive/folders/1z1Pb8TksRykxZo2HmTMHv_YdMedjP-Ta"
+  },
+  {
+    "id": 62,
+    "category": "Ciencia y Matemáticas",
+    "title": "Habilidades en Datos Bioinformáticos",
+    "url": "https://drive.google.com/drive/folders/1dWEw9nNzFp60wifzVUVgsViDaBDagNqK"
+  },
+  {
+    "id": 63,
+    "category": "Ciencia y Matemáticas",
+    "title": "Piensa en Bayes 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1OWThzwI1sCIy264fSCtQgKjpFC3sCKhn"
+  },
+  {
+    "id": 64,
+    "category": "Ciencia y Matemáticas",
+    "title": "Programación de ordenadores cuánticos",
+    "url": "https://drive.google.com/drive/folders/1-jgFao7UMNcROXq7bmFvStfINgJNB9Y2"
+  },
+  {
+    "id": 65,
+    "category": "Ciencia y Matemáticas",
+    "title": "Think Stats 3.ª edición",
+    "url": "https://drive.google.com/drive/folders/1MiLsH9pf4KzEE5cVxItN7-JHVdQqcc4D"
+  },
+  {
+    "id": 66,
+    "category": "Cloud",
+    "title": "Aprender Microsoft Azure",
+    "url": "https://drive.google.com/drive/folders/1IhlEJiUpf3os4oP_oo3NUc7u6Ofy8mJk"
+  },
+  {
+    "id": 67,
+    "category": "Cloud",
+    "title": "Cloud FinOps 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/18yo1gy3EhE7UJ5XGyxR5jwRao-aXZJYP"
+  },
+  {
+    "id": 68,
+    "category": "Cloud",
+    "title": "Cloud Native Go 2.ª edición",
+    "url": "https://drive.google.com/drive/folders/1xO6vHpuK-wfB7lUY1oKZe2rW7cFg3YrO"
+  },
+  {
+    "id": 69,
+    "category": "Cloud",
+    "title": "Construir aplicaciones sin servidor con Google Cloud Run",
+    "url": "https://drive.google.com/drive/folders/1Oowt6g84sYudt6gGR1K7kdC7znnmTXJ9"
+  },
+  {
+    "id": 70,
+    "category": "Cloud",
+    "title": "Construir arquitecturas SaaS multi-inquilino",
+    "url": "https://drive.google.com/drive/folders/1qYK1_FurG5Hgqa3zfKiRsmdoJJHSRrLz"
+  },
+  {
+    "id": 71,
+    "category": "Cloud",
+    "title": "Desarrollo nativo en la nube con Google Cloud",
+    "url": "https://drive.google.com/drive/folders/1OFpjtbF74vupY79JTL06f0gFxn9qU6P7"
+  },
+  {
+    "id": 72,
+    "category": "Cloud",
+    "title": "Desarrollo sin servidor en AWS",
+    "url": "https://drive.google.com/drive/folders/1xs3kQxtU048ToXXaJzrAub5Af5SoDRfL"
+  },
+  {
+    "id": 73,
+    "category": "Cloud",
+    "title": "DevOps Nativo en la Nube con Kubernetes 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/19FKfwarSeFvTgscWzCe1schVxsIHqhSc"
+  },
+  {
+    "id": 74,
+    "category": "Cloud",
+    "title": "Diseño de sistemas en AWS",
+    "url": "https://drive.google.com/drive/folders/1MSKL8DqIiA7EApO_2f1sWXEQ8npBM4S7"
+  },
+  {
+    "id": 75,
+    "category": "Cloud",
+    "title": "El lago de datos en la nube",
+    "url": "https://drive.google.com/drive/folders/16Pa747RwLc7dvdSu4XtrskIVVpJdhCdG"
+  },
+  {
+    "id": 76,
+    "category": "Cloud",
+    "title": "Fundamentos de datos de Azure",
+    "url": "https://drive.google.com/drive/folders/1-eY1jDVXix0yalOufovB0uw2tXZaxYTz"
+  },
+  {
+    "id": 77,
+    "category": "Cloud",
+    "title": "Ingeniería de sistemas resilientes en AWS",
+    "url": "https://drive.google.com/drive/folders/1WcQl8Ql7pL__lZ9XPe_ddTnhTK74ZC02"
+  },
+  {
+    "id": 78,
+    "category": "Cloud",
+    "title": "Java nativo en la nube",
+    "url": "https://drive.google.com/drive/folders/1HQ3F4vfpmLZVMVgJkCwgXnpStcEqNqVa"
+  },
+  {
+    "id": 79,
+    "category": "Cloud",
+    "title": "Libro de cocina AWS",
+    "url": "https://drive.google.com/drive/folders/130UuWVXig2fkZmWmSfsQsizcJ8F09IoG"
+  },
+  {
+    "id": 80,
+    "category": "Cloud",
+    "title": "Libro de cocina Azure",
+    "url": "https://drive.google.com/drive/folders/1FiD50rVhTAAGBJkAKokl3rjJiZygbbNe"
+  },
+  {
+    "id": 81,
+    "category": "Cloud",
+    "title": "Libro de cocina de Google Cloud",
+    "url": "https://drive.google.com/drive/folders/1MkuF1fLYvTSxk2khV_Nw7O8OOhONAS0e"
+  },
+  {
+    "id": 82,
+    "category": "Cloud",
+    "title": "Linux en Azure",
+    "url": "https://drive.google.com/drive/folders/1-x9bNQLOC0cOGDzinThNATsWORd-GygW"
+  },
+  {
+    "id": 83,
+    "category": "Cloud",
+    "title": "Linux y software de código abierto en Azure",
+    "url": "https://drive.google.com/drive/folders/1eWov9JNI2N96LVtMD-5qhwpZuLP8HMug"
+  },
+  {
+    "id": 84,
+    "category": "Cloud",
+    "title": "Migrar a AWS Guía del administrador",
+    "url": "https://drive.google.com/drive/folders/1oHdx8gwYakwnI8j8MePmnR0er4AFm69z"
+  },
+  {
+    "id": 85,
+    "category": "Cloud",
+    "title": "Observabilidad nativa en la nube",
+    "url": "https://drive.google.com/drive/folders/1g9TvAZafujW6Kjl3R6gtQUulHBPMH4kA"
+  },
+  {
+    "id": 86,
+    "category": "Cloud",
+    "title": "OpenShift para desarrolladores 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1z6irp5ZAms72FpgZatLnpWcmLBxWhpM6"
+  },
+  {
+    "id": 87,
+    "category": "Cloud",
+    "title": "Optimización de Java nativo en la nube 2.ª edición",
+    "url": "https://drive.google.com/drive/folders/1DugPeaPMZ_xNKgo7s88czy-aoR2qwAQC"
+  },
+  {
+    "id": 88,
+    "category": "Cloud",
+    "title": "Patrones de arquitectura de aplicaciones en la nube",
+    "url": "https://drive.google.com/drive/folders/1yrx2pcAgRxHI70Jaluk5kMofXvme1vAI"
+  },
+  {
+    "id": 89,
+    "category": "Cloud",
+    "title": "Patrones de diseño para aplicaciones nativas en la nube",
+    "url": "https://drive.google.com/drive/folders/1Quz88ZKIJWxXMyrjOY0yKbVhDDlLaPxi"
+  },
+  {
+    "id": 90,
+    "category": "Cloud",
+    "title": "Prácticas con AWS CDK",
+    "url": "https://drive.google.com/drive/folders/1XThkpXtpCFqGqBw9r55w2mAIjxM3S-cm"
+  },
+  {
+    "id": 91,
+    "category": "Cloud",
+    "title": "Programar AWS Lambda",
+    "url": "https://drive.google.com/drive/folders/17KcltzluTY6zeTHGClfkWgczRS9_Krl8"
+  },
+  {
+    "id": 92,
+    "category": "Cloud",
+    "title": "Qué es la red gestionada en la nube",
+    "url": "https://drive.google.com/drive/folders/1_Ao-B10_bHvXKsmVq0MHhM6z_KelzPTk"
+  },
+  {
+    "id": 93,
+    "category": "Cloud",
+    "title": "Transformación nativa en la nube",
+    "url": "https://drive.google.com/drive/folders/1v1bH7AYFYT6gFQXQ_QnxByzJbtj-IrN4"
+  },
+  {
+    "id": 94,
+    "category": "Datos y Analítica",
+    "title": "Aceleración del desarrollo de canalizaciones de datos",
+    "url": "https://drive.google.com/drive/folders/1AJBFKl65q6Dd6aZjZzmF_JuM8NX82Lk-"
+  },
+  {
+    "id": 95,
+    "category": "Datos y Analítica",
+    "title": "Administración práctica de MySQL",
+    "url": "https://drive.google.com/drive/folders/1-Dm9SDsEdcgYnyZ5IbAaTbhbkXofhFkr"
+  },
+  {
+    "id": 96,
+    "category": "Datos y Analítica",
+    "title": "Aerospike en marcha",
+    "url": "https://drive.google.com/drive/folders/1_p1ZqWllHhsg1tvEw1u-OXldutvXtDEm"
+  },
+  {
+    "id": 97,
+    "category": "Datos y Analítica",
+    "title": "Alteryx Designer La Guía Definitiva",
+    "url": "https://drive.google.com/drive/folders/18ffqZhtMqigZZql4TzCpP_efRET-OH3N"
+  },
+  {
+    "id": 98,
+    "category": "Datos y Analítica",
+    "title": "Amazon Redshift La Guía Definitiva",
+    "url": "https://drive.google.com/drive/folders/19QZM1ZK7LoY1N1R94IsTdoUBLCP1AB-u"
+  },
+  {
+    "id": 99,
+    "category": "Datos y Analítica",
+    "title": "Analítica aumentada",
+    "url": "https://drive.google.com/drive/folders/1NXyhtiv3PZrMG15SfohwxoGdXmvnrYYt"
+  },
+  {
+    "id": 100,
+    "category": "Datos y Analítica",
+    "title": "Analítica avanzada con PySpark",
+    "url": "https://drive.google.com/drive/folders/1l0qzpou1IlLb7EMdvDi8XNKYkbE8yLye"
+  },
+  {
+    "id": 101,
+    "category": "Datos y Analítica",
+    "title": "Analítica del fútbol con Python y R",
+    "url": "https://drive.google.com/drive/folders/1YebaJu3LsvzZVPz0UtUGd1HQN0QRoXfz"
+  },
+  {
+    "id": 102,
+    "category": "Datos y Analítica",
+    "title": "Análisis de negocios modernos",
+    "url": "https://drive.google.com/drive/folders/19_FlLdhAMfDIH47Uy5z-YMfEe36fgJOI"
+  },
+  {
+    "id": 103,
+    "category": "Datos y Analítica",
+    "title": "Análisis geoespacial nativo en la nube con Apache Sedona",
+    "url": "https://drive.google.com/drive/folders/16zY-0fPDmM6VIS3jabVJLOmAJeQvcvHN"
+  },
+  {
+    "id": 104,
+    "category": "Datos y Analítica",
+    "title": "Análisis moderno de datos en Excel",
+    "url": "https://drive.google.com/drive/folders/1MGZooaBpPGEIiFv6n3LGbUwvmQCeAIvD"
+  },
+  {
+    "id": 105,
+    "category": "Datos y Analítica",
+    "title": "Análisis predictivo para la empresa moderna",
+    "url": "https://drive.google.com/drive/folders/17-M9f1otJniOOmHQvmJ8n9iybGbYecRR"
+  },
+  {
+    "id": 106,
+    "category": "Datos y Analítica",
+    "title": "Apache Hudi la guía definitiva",
+    "url": "https://drive.google.com/drive/folders/1bkywPwv9-C7NL4uxnsx2OmikLM9lagam"
+  },
+  {
+    "id": 107,
+    "category": "Datos y Analítica",
+    "title": "Apache Iceberg La Guía Definitiva",
+    "url": "https://drive.google.com/drive/folders/1Ju8nVLS8eZuwi-9BKWnlBCXjhyUWzqdJ"
+  },
+  {
+    "id": 108,
+    "category": "Datos y Analítica",
+    "title": "Apache Polaris la guía definitiva",
+    "url": "https://drive.google.com/drive/folders/1Zw5-XDwvYC3vNUh9cV7eYQdkAOlJwy3h"
+  },
+  {
+    "id": 109,
+    "category": "Datos y Analítica",
+    "title": "Aprender Google Analytics",
+    "url": "https://drive.google.com/drive/folders/1e_P8uFDbOUKMjovKgZolO5Mvl0-QD1Ve"
+  },
+  {
+    "id": 110,
+    "category": "Datos y Analítica",
+    "title": "Aprender Microsoft Power BI",
+    "url": "https://drive.google.com/drive/folders/1eIK0NNdanIr33Krfqjd4U2iV9L07VWaM"
+  },
+  {
+    "id": 111,
+    "category": "Datos y Analítica",
+    "title": "Aprender PHP MySQL y JavaScript 7.ª edición",
+    "url": "https://drive.google.com/drive/folders/1VgS0nrBAd6D5ERzJ6LY4gA10MsEskWRB"
+  },
+  {
+    "id": 112,
+    "category": "Datos y Analítica",
+    "title": "Aprender SQL 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1GVsqYCU3LuMqkFKaoWsuzmrRgA2YyfqJ"
+  },
+  {
+    "id": 113,
+    "category": "Datos y Analítica",
+    "title": "Aprender Snowflake SQL y Scripting",
+    "url": "https://drive.google.com/drive/folders/1ARmvxCcFHL1-EblHQj17nEBRulwKiekh"
+  },
+  {
+    "id": 114,
+    "category": "Datos y Analítica",
+    "title": "Aprender y utilizar Presto",
+    "url": "https://drive.google.com/drive/folders/1an_ILiQ5DxR0r9R12uA2d98OyiraTX93"
+  },
+  {
+    "id": 115,
+    "category": "Datos y Analítica",
+    "title": "Arquitectura de plataformas de datos modernas",
+    "url": "https://drive.google.com/drive/folders/1tZsU9DRBB7i3Cy8NR8EmplcoZK8mbzkp"
+  },
+  {
+    "id": 116,
+    "category": "Datos y Analítica",
+    "title": "Avanzar en la Analítica",
+    "url": "https://drive.google.com/drive/folders/1rDNahAXjssarvHv1X8FYgR3L_l8Kz7nO"
+  },
+  {
+    "id": 117,
+    "category": "Datos y Analítica",
+    "title": "Bases de datos de grafos 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1KzNAad4oJMgoVzK_suXOXCAF3ehwJQe8"
+  },
+  {
+    "id": 118,
+    "category": "Datos y Analítica",
+    "title": "Bases de datos vectoriales",
+    "url": "https://drive.google.com/drive/folders/1Dja3Gbvx2SSqKgRTW2ryTwe3DmqBOnjB"
+  },
+  {
+    "id": 119,
+    "category": "Datos y Analítica",
+    "title": "Cassandra La Guía Definitiva Tercera Edición 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/17YMdMGtjMbz8AScaquEfjvkQxuMpc_pI"
+  },
+  {
+    "id": 120,
+    "category": "Datos y Analítica",
+    "title": "CockroachDB La guía definitiva 2.ª edición",
+    "url": "https://drive.google.com/drive/folders/1N-XMCxjt00tE0wkwun0kX09h0M34nolT"
+  },
+  {
+    "id": 121,
+    "category": "Datos y Analítica",
+    "title": "Comunicar datos con Tableau",
+    "url": "https://drive.google.com/drive/folders/1LOVxuwsWTIMZcmxOejnaUKoXePgGOa7I"
+  },
+  {
+    "id": 122,
+    "category": "Datos y Analítica",
+    "title": "Comunicarse con datos",
+    "url": "https://drive.google.com/drive/folders/1zKiOtks_Vx0BWnvWwD0sE1OTFxKuL50T"
+  },
+  {
+    "id": 123,
+    "category": "Datos y Analítica",
+    "title": "Construir una malla de datos basada en eventos",
+    "url": "https://drive.google.com/drive/folders/1vFnCdqtfJARihzwOOlIiovZHVWaoUFuK"
+  },
+  {
+    "id": 124,
+    "category": "Datos y Analítica",
+    "title": "Consulta En marcha",
+    "url": "https://drive.google.com/drive/folders/16eLQ3hXr5rajvVWlV1r_RRBCf8eOrsN4"
+  },
+  {
+    "id": 125,
+    "category": "Datos y Analítica",
+    "title": "Crear soluciones con Microsoft Power Platform",
+    "url": "https://drive.google.com/drive/folders/11lYwP_Axy2sdBKaFs5hPJLUE5fPQYCDp"
+  },
+  {
+    "id": 126,
+    "category": "Datos y Analítica",
+    "title": "Crear una organización basada en datos",
+    "url": "https://drive.google.com/drive/folders/1vosSBRe_87mWodi03KpBzPAhUL-IGL5l"
+  },
+  {
+    "id": 127,
+    "category": "Datos y Analítica",
+    "title": "Creación de soluciones de integración de datos",
+    "url": "https://drive.google.com/drive/folders/1Na--S9gZdEl0Qjnu7t7xRdkDSeEBs6W2"
+  },
+  {
+    "id": 128,
+    "category": "Datos y Analítica",
+    "title": "Cuadro estadístico",
+    "url": "https://drive.google.com/drive/folders/1-y34AEbDt2x4veRVtAos1FXQRJ3wslx9"
+  },
+  {
+    "id": 129,
+    "category": "Datos y Analítica",
+    "title": "DuckDB en funcionamiento",
+    "url": "https://drive.google.com/drive/folders/19WkmX4MTv4RJHhNNHAMU_NE8Kklu6lSn"
+  },
+  {
+    "id": 130,
+    "category": "Datos y Analítica",
+    "title": "Dominar los informes y cuadros de mando de Salesforce",
+    "url": "https://drive.google.com/drive/folders/19MwZs8N_GRuCwIYwRizw8xtrqOwqVdtM"
+  },
+  {
+    "id": 131,
+    "category": "Datos y Analítica",
+    "title": "El Catálogo de Datos de la Empresa",
+    "url": "https://drive.google.com/drive/folders/1Yvu7_4JXly5z8NpxpsHXaGHTDr73UO3M"
+  },
+  {
+    "id": 132,
+    "category": "Datos y Analítica",
+    "title": "El auge de la gestión lógica de datos",
+    "url": "https://drive.google.com/drive/folders/1CeBPUUCGLfSapIVWogVRyId0SUvXDDwu"
+  },
+  {
+    "id": 133,
+    "category": "Datos y Analítica",
+    "title": "El código como datos",
+    "url": "https://drive.google.com/drive/folders/1EIs2BQC2u3Bjw8RspePIHwkxaHePWBXu"
+  },
+  {
+    "id": 134,
+    "category": "Datos y Analítica",
+    "title": "Escalado del aprendizaje de grafos para la empresa",
+    "url": "https://drive.google.com/drive/folders/1Zp0GlBvrRGNWvM_TSUyrorzNxoIWF1Ls"
+  },
+  {
+    "id": 135,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos de Microsoft Fabric",
+    "url": "https://drive.google.com/drive/folders/1Vybc6NCX2Qo5kLM4EeS8TkFEW_TiaKaI"
+  },
+  {
+    "id": 136,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos de la calidad de datos",
+    "url": "https://drive.google.com/drive/folders/14IZvX-5xb8cYB2b-G6XUgBF_OwWOPk8j"
+  },
+  {
+    "id": 137,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos de la gestión de metadatos",
+    "url": "https://drive.google.com/drive/folders/14BCeQ_RBfqYN_lsqFh_R_dDICrwJnooR"
+  },
+  {
+    "id": 138,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos de la ingeniería de datos",
+    "url": "https://drive.google.com/drive/folders/13WGn5_2L4LQnZnU_lKfoiCS0LOs4s8ko"
+  },
+  {
+    "id": 139,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos de la visualización de datos",
+    "url": "https://drive.google.com/drive/folders/1-iB-gHAOLiHO9_eK1hzDM1bFGZ4o-2HZ"
+  },
+  {
+    "id": 140,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos de las canalizaciones de telemetría",
+    "url": "https://drive.google.com/drive/folders/1IAsldzgnYr0x3x_PvsfBsx3pVLEGRg3H"
+  },
+  {
+    "id": 141,
+    "category": "Datos y Analítica",
+    "title": "Fundamentos para una mejor gestión de datos empresariales",
+    "url": "https://drive.google.com/drive/folders/1q2zsGZ-4q2XLHq6-O-ym6EX8cgOMOyi_"
+  },
+  {
+    "id": 142,
+    "category": "Datos y Analítica",
+    "title": "Genómica en la nube",
+    "url": "https://drive.google.com/drive/folders/1J7Tcl8zQ0cMbQmEOCtE9HxSzmTdF4OsA"
+  },
+  {
+    "id": 143,
+    "category": "Datos y Analítica",
+    "title": "Gestión de datos a escala 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1zD5Fd7Hbb2jfxWajHxia5UTf9ker46HI"
+  },
+  {
+    "id": 144,
+    "category": "Datos y Analítica",
+    "title": "Gestión de datos nativos de la nube en Kubernetes",
+    "url": "https://drive.google.com/drive/folders/1BGZLKruQDh-T3QJ6T_eh2YxJ0tCywbK7"
+  },
+  {
+    "id": 145,
+    "category": "Datos y Analítica",
+    "title": "Gobierno de datos La Guía Definitiva",
+    "url": "https://drive.google.com/drive/folders/1eACV9qKXWhVUqTrEmi0E2qbxXt276V27"
+  },
+  {
+    "id": 146,
+    "category": "Datos y Analítica",
+    "title": "Google BigQuery La Guía Definitiva",
+    "url": "https://drive.google.com/drive/folders/1nf3AiRdM7XXK6bSyUtkU2oAjRJh8SNck"
+  },
+  {
+    "id": 147,
+    "category": "Datos y Analítica",
+    "title": "Guía SQL de Bolsillo 4ª Edición",
+    "url": "https://drive.google.com/drive/folders/1Dp3KxzA9lgXDgKMo9ksYxE_zuJVmGgia"
+  },
+  {
+    "id": 148,
+    "category": "Datos y Analítica",
+    "title": "Guía del profesional de los datos gráficos",
+    "url": "https://drive.google.com/drive/folders/1xbpQ3LSZ4T3VhIc30DmTycHt4tmv7ce-"
+  },
+  {
+    "id": 149,
+    "category": "Datos y Analítica",
+    "title": "Head First SQL 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1MYzYKwiczdvsQu8V2j-T7b2uGvfZSmoe"
+  },
+  {
+    "id": 150,
+    "category": "Datos y Analítica",
+    "title": "Implementación de Data Mesh",
+    "url": "https://drive.google.com/drive/folders/1zG2ivhQtcnkiy1oL7RcVAyj5vzRHVe6A"
+  },
+  {
+    "id": 151,
+    "category": "Datos y Analítica",
+    "title": "Ingeniería de datos financieros",
+    "url": "https://drive.google.com/drive/folders/1hWiJB70RKco-wQuYP_HvmvzsDcBy7iIq"
+  },
+  {
+    "id": 152,
+    "category": "Datos y Analítica",
+    "title": "Internos de la base de datos",
+    "url": "https://drive.google.com/drive/folders/1OhsGHdpZVrL1blVyDW0nhrkwK-ygLT3b"
+  },
+  {
+    "id": 153,
+    "category": "Datos y Analítica",
+    "title": "Libro de cocina SQL 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1WEK8dcmGHko6LinkxxCT8yo--nmUnWCn"
+  },
+  {
+    "id": 154,
+    "category": "Datos y Analítica",
+    "title": "Libro de cocina de MySQL 4ª edición",
+    "url": "https://drive.google.com/drive/folders/1YpC6CFYZEdRQF6myJOltTUXpFZ0mA04L"
+  },
+  {
+    "id": 155,
+    "category": "Datos y Analítica",
+    "title": "Libro de recetas de Dataproc",
+    "url": "https://drive.google.com/drive/folders/1foJZZ-0C3znF743zbpjR3ylr2Tbac_wH"
+  },
+  {
+    "id": 156,
+    "category": "Datos y Analítica",
+    "title": "Libro de recetas de Microsoft Power Automate",
+    "url": "https://drive.google.com/drive/folders/1B93PXGvZn8RmCSHcEK31GV242jLF8VYd"
+  },
+  {
+    "id": 157,
+    "category": "Datos y Analítica",
+    "title": "Libro de recetas de Tableau Desktop",
+    "url": "https://drive.google.com/drive/folders/1GT24oe2Bzo8iCBO2dpNF4KH2xrrfGYvo"
+  },
+  {
+    "id": 158,
+    "category": "Datos y Analítica",
+    "title": "Malla de transmisión de datos",
+    "url": "https://drive.google.com/drive/folders/1G1AAPmyI1YiUAopT2QJw_BeGktJ0PHND"
+  },
+  {
+    "id": 159,
+    "category": "Datos y Analítica",
+    "title": "Modelado semántico de datos",
+    "url": "https://drive.google.com/drive/folders/1rF0RvH4_nY5lcUtpOEkItbwilPgDtzjP"
+  },
+  {
+    "id": 160,
+    "category": "Datos y Analítica",
+    "title": "MongoDB La Guía Definitiva 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1zCK5PmbB82OlFCvkKFVFRGvRe6QyJgHT"
+  },
+  {
+    "id": 161,
+    "category": "Datos y Analítica",
+    "title": "Neo4j La guía definitiva",
+    "url": "https://drive.google.com/drive/folders/15TOiMLbu9sC7P6pPbNcj96EbJ-cp_Rba"
+  },
+  {
+    "id": 162,
+    "category": "Datos y Analítica",
+    "title": "Patrones de diseño de ingeniería de datos",
+    "url": "https://drive.google.com/drive/folders/1P3I4CVE11Y5XxkEKj9BhK7_T98PghNzb"
+  },
+  {
+    "id": 163,
+    "category": "Datos y Analítica",
+    "title": "PostgreSQL Up and Running 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1P7gIw1ZUXP6hK8geWJiyC-eYdFCxLpQE"
+  },
+  {
+    "id": 164,
+    "category": "Datos y Analítica",
+    "title": "Python para el Análisis de Datos 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1Z4dNDDpRcLMqUOB3x4MYSJNlQKqCYti3"
+  },
+  {
+    "id": 165,
+    "category": "Datos y Analítica",
+    "title": "Python para el Análisis de Datos Geoespaciales",
+    "url": "https://drive.google.com/drive/folders/1Yqmtg82hR3CntGxSPuSmVr7Uvb67RyaE"
+  },
+  {
+    "id": 166,
+    "category": "Datos y Analítica",
+    "title": "Resolución práctica de entidades",
+    "url": "https://drive.google.com/drive/folders/1kFOfPpWbqBL0qS9umAR9sovxww7eEOAA"
+  },
+  {
+    "id": 167,
+    "category": "Datos y Analítica",
+    "title": "SQL avanzado",
+    "url": "https://drive.google.com/drive/folders/18vK5lvObJHRZyyJM-GgtB5Q0W8R0dcKA"
+  },
+  {
+    "id": 168,
+    "category": "Datos y Analítica",
+    "title": "SQL en una cáscara de nuez 4ª edición",
+    "url": "https://drive.google.com/drive/folders/17dzqkKGIO_SP8q8QBwPD0Gq8kwAj8ykW"
+  },
+  {
+    "id": 169,
+    "category": "Datos y Analítica",
+    "title": "SQL para análisis de datos",
+    "url": "https://drive.google.com/drive/folders/1_-j-_vLToMgq_iKyyBHxqND72SWN3gEA"
+  },
+  {
+    "id": 170,
+    "category": "Datos y Analítica",
+    "title": "SQLAlchemy Esencial 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1kiLJP1TAps7kysOY-p-5P-L4uSqeVk3-"
+  },
+  {
+    "id": 171,
+    "category": "Datos y Analítica",
+    "title": "Solución avanzada de problemas y ajuste del rendimiento de SQL Server",
+    "url": "https://drive.google.com/drive/folders/16ZGgC-uG6JngfDq7I2cVjBcNXU7jg9kX"
+  },
+  {
+    "id": 172,
+    "category": "Datos y Analítica",
+    "title": "Spark de alto rendimiento 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1YMad6kJY8lSYb2hqhoyhdgfVl2J6Tg_X"
+  },
+  {
+    "id": 173,
+    "category": "Datos y Analítica",
+    "title": "Tramitación práctica de datos y calidad de datos en Python",
+    "url": "https://drive.google.com/drive/folders/1i_aOGaXNqq6axHXqcBYtoQcvgbj1IFG3"
+  },
+  {
+    "id": 174,
+    "category": "Datos y Analítica",
+    "title": "Trino La Guía Definitiva 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1sNVMBhZfoMc-wASReXEoiyacM_exjnk3"
+  },
+  {
+    "id": 175,
+    "category": "Datos y Analítica",
+    "title": "Visualización de Datos con Python y JavaScript 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1aFHWzQD3tGF4_-b8p0BZ9Z54yo2iF_rC"
+  },
+  {
+    "id": 176,
+    "category": "Datos y Analítica",
+    "title": "Visualización de datos con Microsoft Power BI",
+    "url": "https://drive.google.com/drive/folders/1blwT2hxGqUAaouOk8QhsAjtPso4f0vf6"
+  },
+  {
+    "id": 177,
+    "category": "Datos y Analítica",
+    "title": "Visualización práctica de datos",
+    "url": "https://drive.google.com/drive/folders/1jH2896dK5LLO47-7zFDABOJ4DmA2QIYu"
+  },
+  {
+    "id": 178,
+    "category": "DevOps y SRE",
+    "title": "Administración Práctica de Sistemas Linux",
+    "url": "https://drive.google.com/drive/folders/1TNpM0Mj0bR-hW4bYdPx0yhgLkr248VED"
+  },
+  {
+    "id": 179,
+    "category": "DevOps y SRE",
+    "title": "Ansible Up and Running 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1hoqEzTglzwnk8B7LvHhJ69ucEQgJzQM1"
+  },
+  {
+    "id": 180,
+    "category": "DevOps y SRE",
+    "title": "Aprender Linux moderno",
+    "url": "https://drive.google.com/drive/folders/1ZKsXPLVTT5nRZl-OCZ2u3oYClAUcj8sd"
+  },
+  {
+    "id": 181,
+    "category": "DevOps y SRE",
+    "title": "Aprender las acciones de GitHub",
+    "url": "https://drive.google.com/drive/folders/1LBuK1LRDQUlaVJ8haGLF6bZYjofM6eCv"
+  },
+  {
+    "id": 182,
+    "category": "DevOps y SRE",
+    "title": "Aprendizaje eBPF",
+    "url": "https://drive.google.com/drive/folders/1k11D2jYYGqLEJSAHS7zNiEJY94a9Xs6B"
+  },
+  {
+    "id": 183,
+    "category": "DevOps y SRE",
+    "title": "Automatizar la administración de Junos",
+    "url": "https://drive.google.com/drive/folders/12Hk4mSKcH7-g9AledylO3icLDLtwCra7"
+  },
+  {
+    "id": 184,
+    "category": "DevOps y SRE",
+    "title": "Cilium en funcionamiento",
+    "url": "https://drive.google.com/drive/folders/1vQH0Yu3NUYbmI1IdFLo0PD7GN3UyGgma"
+  },
+  {
+    "id": 185,
+    "category": "DevOps y SRE",
+    "title": "Control de versiones con Git 3ª edición",
+    "url": "https://drive.google.com/drive/folders/1NaLd148szHwb6z5Zcjw9P3aZXKL93q1d"
+  },
+  {
+    "id": 186,
+    "category": "DevOps y SRE",
+    "title": "Docker Up & Running 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1vmmD2bUmYhvD3RTXpIuoTmejbgK9IgN5"
+  },
+  {
+    "id": 187,
+    "category": "DevOps y SRE",
+    "title": "Fundamentos de DevOps y entrega de software",
+    "url": "https://drive.google.com/drive/folders/1Esxn3TrEKE8J-pMlVGLF_l5nsTie2qA4"
+  },
+  {
+    "id": 188,
+    "category": "DevOps y SRE",
+    "title": "Fundamentos de la Observabilidad de los Datos",
+    "url": "https://drive.google.com/drive/folders/1jK2TpXdUzxZeS4n13_PmDUWHZ-AB8sgc"
+  },
+  {
+    "id": 189,
+    "category": "DevOps y SRE",
+    "title": "Gestión Continua de APIs 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/176zs6tsoqmSzISFdF8mfN-wCLQxn-wQq"
+  },
+  {
+    "id": 190,
+    "category": "DevOps y SRE",
+    "title": "Gestión omnidireccional de API para ingeniería de plataformas",
+    "url": "https://drive.google.com/drive/folders/1ADQD3aJsJDe5eEt6FB8iZfb6SNgU9X_b"
+  },
+  {
+    "id": 191,
+    "category": "DevOps y SRE",
+    "title": "Guía de bolsillo de Linux 4ª edición",
+    "url": "https://drive.google.com/drive/folders/1ymros6GdOXBFfrpCM-SwlD4NCN50G9od"
+  },
+  {
+    "id": 192,
+    "category": "DevOps y SRE",
+    "title": "Guía de operaciones de Kubeflow",
+    "url": "https://drive.google.com/drive/folders/1-K2aQB0Z39qdrm8eAxV7J2paDB1BqGDb"
+  },
+  {
+    "id": 193,
+    "category": "DevOps y SRE",
+    "title": "Guía práctica de la telemetría de redes modernas",
+    "url": "https://drive.google.com/drive/folders/1nR1Yx3Rsi-He95sPlOqoeDC1ObgtGEhD"
+  },
+  {
+    "id": 194,
+    "category": "DevOps y SRE",
+    "title": "Infraestructura como código 2ª edición",
+    "url": "https://drive.google.com/drive/folders/19-xoBNPoZYBoyZzwP7-sTPjICXrTksVL"
+  },
+  {
+    "id": 195,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería de Fiabilidad del Sitio",
+    "url": "https://drive.google.com/drive/folders/1iMqYwJsAR9wqJaZLb6k9sWIpqLIbAC-b"
+  },
+  {
+    "id": 196,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería de confiabilidad del sitio 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1BiYB9GLB_xuvJaiFYMhwkI8tWDPUktfF"
+  },
+  {
+    "id": 197,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería de contexto para la observabilidad",
+    "url": "https://drive.google.com/drive/folders/1Io5CeDok-7fWdGXSyQgfMkDcmF_rt97p"
+  },
+  {
+    "id": 198,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería de la observabilidad",
+    "url": "https://drive.google.com/drive/folders/1ic0O56d0TKJFIoCNI9dRxo-zlaPpRSOJ"
+  },
+  {
+    "id": 199,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería de observabilidad 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1AZK39l2fU7TFaslr9rRIXA9L-CRYHzZq"
+  },
+  {
+    "id": 200,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería de plataformas",
+    "url": "https://drive.google.com/drive/folders/1-Yg7l6k7-vEhIh_vilEwaYxi_gDqcwdD"
+  },
+  {
+    "id": 201,
+    "category": "DevOps y SRE",
+    "title": "Ingeniería del caos",
+    "url": "https://drive.google.com/drive/folders/1V6EJzh4eGxzMa81Xxdw2nMupI5GNUAtt"
+  },
+  {
+    "id": 202,
+    "category": "DevOps y SRE",
+    "title": "Jenkins 2 En marcha",
+    "url": "https://drive.google.com/drive/folders/13tgfyYg7xl7Qj5l1ONZruaUmtv15K5FO"
+  },
+  {
+    "id": 203,
+    "category": "DevOps y SRE",
+    "title": "Libro de cocina GitOps",
+    "url": "https://drive.google.com/drive/folders/1xaujamleX37uuDvegEuA3qRXIf44NXRu"
+  },
+  {
+    "id": 204,
+    "category": "DevOps y SRE",
+    "title": "Libro de cocina Linux 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1MBNFO4Laot9iep1nCvb_siWxF-QQzDkP"
+  },
+  {
+    "id": 205,
+    "category": "DevOps y SRE",
+    "title": "Libro de cocina de Kubernetes 2ª edición",
+    "url": "https://drive.google.com/drive/folders/12dMZ3H6ceQHnWJuB7n7mmnm7M_3CjQ5c"
+  },
+  {
+    "id": 206,
+    "category": "DevOps y SRE",
+    "title": "Libro de recetas Terraform",
+    "url": "https://drive.google.com/drive/folders/1Iwt7Ch9h1fDQokKFoHvUKPJAlHJBjlIU"
+  },
+  {
+    "id": 207,
+    "category": "DevOps y SRE",
+    "title": "Linkerd En marcha",
+    "url": "https://drive.google.com/drive/folders/1ZY_OZDX4SgGilHzoAEVCzOBPrjBBapSv"
+  },
+  {
+    "id": 208,
+    "category": "DevOps y SRE",
+    "title": "Linux eficiente en la línea de comandos",
+    "url": "https://drive.google.com/drive/folders/1R-TcSBU7i8ABeQBMC6lQ4d4CHXb5mTFW"
+  },
+  {
+    "id": 209,
+    "category": "DevOps y SRE",
+    "title": "Más allá de los pipelines",
+    "url": "https://drive.google.com/drive/folders/1YuI7GPPgzI0DuRGJFpw5969ttsjbVoPk"
+  },
+  {
+    "id": 210,
+    "category": "DevOps y SRE",
+    "title": "Observabilidad de código abierto",
+    "url": "https://drive.google.com/drive/folders/1ygkQoAEJp5ssh9RzgD6Lx4Bi-EKxQcbA"
+  },
+  {
+    "id": 211,
+    "category": "DevOps y SRE",
+    "title": "Prometeo Up & Running 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1vEvUaTyBJcPb_l9u4OCEWeo0ZvsG-t_J"
+  },
+  {
+    "id": 212,
+    "category": "DevOps y SRE",
+    "title": "Rastreo distribuido en la práctica",
+    "url": "https://drive.google.com/drive/folders/1EGRtk6aei229qNbax3m_v4nBSBhiSFvb"
+  },
+  {
+    "id": 213,
+    "category": "DevOps y SRE",
+    "title": "Seguimiento práctico",
+    "url": "https://drive.google.com/drive/folders/1AVQr-MMVLl6hEZ7lD99UaSgcsxF7QoTh"
+  },
+  {
+    "id": 214,
+    "category": "DevOps y SRE",
+    "title": "Terraform Up and Running 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1o6RoTQDEjQnbkxPTHNsy2mTMuxSsCca4"
+  },
+  {
+    "id": 215,
+    "category": "Finanzas y Fintech",
+    "title": "Construyendo los cimientos de las finanzas modernas",
+    "url": "https://drive.google.com/drive/folders/1lQUjYvqJi1lp0rbulCcMasu5NlcRmDIb"
+  },
+  {
+    "id": 216,
+    "category": "Finanzas y Fintech",
+    "title": "Manual financiero para pymes",
+    "url": "https://drive.google.com/drive/folders/1g8klZXu-Rx46OeM3fkDtRho7dsdO5tTi"
+  },
+  {
+    "id": 217,
+    "category": "Finanzas y Fintech",
+    "title": "Prevención práctica del fraude",
+    "url": "https://drive.google.com/drive/folders/1zjke0VY926WDLhMuJ7kQwyZGxLEGravI"
+  },
+  {
+    "id": 218,
+    "category": "Hardware IoT y Embebido",
+    "title": "Crear realidades aumentadas y virtuales",
+    "url": "https://drive.google.com/drive/folders/1Fb8evpvXgmnFVMlpFwHK0tDRGYKh_mqv"
+  },
+  {
+    "id": 219,
+    "category": "Hardware IoT y Embebido",
+    "title": "Electrónica Embebida Aplicada",
+    "url": "https://drive.google.com/drive/folders/1vrjWirWdj0hnM8AqEzsLFTiifD4K2X6d"
+  },
+  {
+    "id": 220,
+    "category": "Hardware IoT y Embebido",
+    "title": "Libro de recetas de desarrollo de Unity 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1qjPVJLyqL6GzDMixL8BUNLl70q5WW_ug"
+  },
+  {
+    "id": 221,
+    "category": "Hardware IoT y Embebido",
+    "title": "Primeros pasos con Bluetooth de baja energía",
+    "url": "https://drive.google.com/drive/folders/1AyBOPTP53WCaBXTToo1dcjEr_as7OgZe"
+  },
+  {
+    "id": 222,
+    "category": "Hardware IoT y Embebido",
+    "title": "Programar el Internet de las Cosas",
+    "url": "https://drive.google.com/drive/folders/1cFchsD021WxcH5ictlklsE7QCz8CBpqJ"
+  },
+  {
+    "id": 223,
+    "category": "IA y Machine Learning",
+    "title": "API prácticas para IA y ciencia de datos",
+    "url": "https://drive.google.com/drive/folders/1ZX7jTjGQtuqpjKM2WL458wZoQNBkDF8C"
+  },
+  {
+    "id": 224,
+    "category": "IA y Machine Learning",
+    "title": "Agentes de IA La guía definitiva",
+    "url": "https://drive.google.com/drive/folders/1G_dFOwpxgf3F0KNFA_y5ZgN5jmw5g1AO"
+  },
+  {
+    "id": 225,
+    "category": "IA y Machine Learning",
+    "title": "Agentes de IA con MCP",
+    "url": "https://drive.google.com/drive/folders/16huajOoOJkPB_yaiy1uJE3h0PLWNsa4h"
+  },
+  {
+    "id": 226,
+    "category": "IA y Machine Learning",
+    "title": "Agentic GraphRAG",
+    "url": "https://drive.google.com/drive/folders/16SMyzCLj1Ds0cHSPNHPCEG_qaBCyW1Zz"
+  },
+  {
+    "id": 227,
+    "category": "IA y Machine Learning",
+    "title": "Análisis basados en gráficos y aprendizaje automático con TigerGraph",
+    "url": "https://drive.google.com/drive/folders/1gUKx4xxp9U76adOOC40GabUxtBZboQH2"
+  },
+  {
+    "id": 228,
+    "category": "IA y Machine Learning",
+    "title": "Análisis de Texto Aplicado con Python",
+    "url": "https://drive.google.com/drive/folders/1Mvdc5FLfFYpdSbwIfauUb2f4kmqfLw_8"
+  },
+  {
+    "id": 229,
+    "category": "IA y Machine Learning",
+    "title": "Análisis de fútbol con aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1isEFsDnVTlUFOTNlIOU6E7fJJsuMn_X1"
+  },
+  {
+    "id": 230,
+    "category": "IA y Machine Learning",
+    "title": "Aprender GitHub Copilot",
+    "url": "https://drive.google.com/drive/folders/1Ww8h2MjgnELw1bW04QlhbJ0I-dKi457D"
+  },
+  {
+    "id": 231,
+    "category": "IA y Machine Learning",
+    "title": "Aprender LangChain",
+    "url": "https://drive.google.com/drive/folders/1roUkKXn_hPEzMyYyu4sJe7vEZuOSiKpP"
+  },
+  {
+    "id": 232,
+    "category": "IA y Machine Learning",
+    "title": "Aprender a usar herramientas de IA generativa para Excel",
+    "url": "https://drive.google.com/drive/folders/1bUWgfMLPF0yco6pNCtWCoBYIKbWsdeVm"
+  },
+  {
+    "id": 233,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje Profundo Práctico para Nube Móvil y Edge",
+    "url": "https://drive.google.com/drive/folders/1xn88ijKTP6aOrAUYND5HZ7fiClgkTaaK"
+  },
+  {
+    "id": 234,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje automático fiable",
+    "url": "https://drive.google.com/drive/folders/1n6W0KsrF3T7W5WIgPUj0hSqP0vLWGlza"
+  },
+  {
+    "id": 235,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje automático para aplicaciones de alto riesgo",
+    "url": "https://drive.google.com/drive/folders/12WsuyVOoxafmdglMWPLFZFvDSuglCOR8"
+  },
+  {
+    "id": 236,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje automático práctico con Scikit-Learn Keras y TensorFlow 3ª edición",
+    "url": "https://drive.google.com/drive/folders/1Wc5LRZqoo0iPaW0LR1k6XooI7S8ZRciF"
+  },
+  {
+    "id": 237,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje automático práctico con Scikit-Learn y PyTorch",
+    "url": "https://drive.google.com/drive/folders/1QN7M2p4tA_FifxViU9FuKiwGSft4wGHD"
+  },
+  {
+    "id": 238,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje automático y seguridad",
+    "url": "https://drive.google.com/drive/folders/1XTaVH_WdVQEbGODBRhYVDy6uNlR109sU"
+  },
+  {
+    "id": 239,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje por refuerzo para finanzas",
+    "url": "https://drive.google.com/drive/folders/1czV2VibnXF6yBzMcTxjDS-5_31uyt8VP"
+  },
+  {
+    "id": 240,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje profundo",
+    "url": "https://drive.google.com/drive/folders/1gdyag1uOAjTnWS8ezp7Nyax1OSYWmsei"
+  },
+  {
+    "id": 241,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje profundo a escala",
+    "url": "https://drive.google.com/drive/folders/1vqBPGqSSFPxPII91R5hfRu_19ph1izXX"
+  },
+  {
+    "id": 242,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje profundo para las finanzas",
+    "url": "https://drive.google.com/drive/folders/1-MwMUbScIOYGietdOcu7HvGN_1nfF1nK"
+  },
+  {
+    "id": 243,
+    "category": "IA y Machine Learning",
+    "title": "Aprendizaje profundo para programadores con fastai y PyTorch",
+    "url": "https://drive.google.com/drive/folders/1xacK5z3eSR2T-tlLOoKenWn1zSNFPK4k"
+  },
+  {
+    "id": 244,
+    "category": "IA y Machine Learning",
+    "title": "Arquitectura de Plataformas de Datos y Aprendizaje Automático",
+    "url": "https://drive.google.com/drive/folders/1pmv--ZXIHPB7MHjCKBZ-rY8m4s8wL1NW"
+  },
+  {
+    "id": 245,
+    "category": "IA y Machine Learning",
+    "title": "Arquitecturas de datos de IA agencial",
+    "url": "https://drive.google.com/drive/folders/1bNq-WWIgO-KGBsZcGx88i3tyo89Nqb_8"
+  },
+  {
+    "id": 246,
+    "category": "IA y Machine Learning",
+    "title": "Automatizar la supervisión de la calidad de los datos",
+    "url": "https://drive.google.com/drive/folders/1aWYX0ecAX4dLZ3EKqrQBbkITBgWXbCEM"
+  },
+  {
+    "id": 247,
+    "category": "IA y Machine Learning",
+    "title": "Álgebra lineal práctica para la ciencia de datos",
+    "url": "https://drive.google.com/drive/folders/1c-Ql7ykIGDQIH3UMOJiov6YIHeC9_1H1"
+  },
+  {
+    "id": 248,
+    "category": "IA y Machine Learning",
+    "title": "Bases de datos vectoriales para la IA empresarial",
+    "url": "https://drive.google.com/drive/folders/1IP5eqftJ0ZAapi6h24DDqx8m_ba9Jrio"
+  },
+  {
+    "id": 249,
+    "category": "IA y Machine Learning",
+    "title": "Ciencia de Datos en la Plataforma en la Nube de Google 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/16cwtdL5uqusNhbGNV5vqiDwWanzuJcWa"
+  },
+  {
+    "id": 250,
+    "category": "IA y Machine Learning",
+    "title": "Ciencia de datos desde cero 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1XeMX9Dy7U4KSVqeqR4tfyHSHbXk0gznO"
+  },
+  {
+    "id": 251,
+    "category": "IA y Machine Learning",
+    "title": "Ciencia de datos en la línea de comandos 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1tQ3d7kZ53bmBd6vKmnr0aLTMA0jVk6lG"
+  },
+  {
+    "id": 252,
+    "category": "IA y Machine Learning",
+    "title": "Cómo proteger los sistemas de IA",
+    "url": "https://drive.google.com/drive/folders/1wfoA9AlOknE3TolNq-_jAGGtRj0Nxjav"
+  },
+  {
+    "id": 253,
+    "category": "IA y Machine Learning",
+    "title": "Concurrencia moderna en Java",
+    "url": "https://drive.google.com/drive/folders/17uaRzC4Bjbf8vjeP6j3pOspR4-ZJk0Qw"
+  },
+  {
+    "id": 254,
+    "category": "IA y Machine Learning",
+    "title": "Construir Pipelines de Aprendizaje Automático",
+    "url": "https://drive.google.com/drive/folders/1dmgWUEFRQHrNJcD1PTijX5x1jC-u4a2w"
+  },
+  {
+    "id": 255,
+    "category": "IA y Machine Learning",
+    "title": "Construir grafos de conocimiento",
+    "url": "https://drive.google.com/drive/folders/100lswA612SnhHxWFu5SCWMcU0dEEIvdt"
+  },
+  {
+    "id": 256,
+    "category": "IA y Machine Learning",
+    "title": "Creación de aplicaciones basadas en el aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1n8ZPE3dymz9zbd7EC6KIT8o5WdYTSYbW"
+  },
+  {
+    "id": 257,
+    "category": "IA y Machine Learning",
+    "title": "Creación de la próxima generación de infraestructura de IA",
+    "url": "https://drive.google.com/drive/folders/1tp3WkjzprE81_lBsnI14-CDYy27158OA"
+  },
+  {
+    "id": 258,
+    "category": "IA y Machine Learning",
+    "title": "Creación de productos basados en IA",
+    "url": "https://drive.google.com/drive/folders/1alFkQl-YWFAPn5Zn1ZNfjQRbGfdra8wY"
+  },
+  {
+    "id": 259,
+    "category": "IA y Machine Learning",
+    "title": "Creación de servicios de IA generativa con FastAPI",
+    "url": "https://drive.google.com/drive/folders/1JXjZyw0PFsEeKNWMSfTArdaj_2wo4puZ"
+  },
+  {
+    "id": 260,
+    "category": "IA y Machine Learning",
+    "title": "Creación de sistemas de aprendizaje automático con un almacén de características",
+    "url": "https://drive.google.com/drive/folders/1OHbsgVpFoTg2pa0C9CyYBgslGmu5mEdf"
+  },
+  {
+    "id": 261,
+    "category": "IA y Machine Learning",
+    "title": "Creación de una plataforma de datos e inteligencia artificial con PostgreSQL",
+    "url": "https://drive.google.com/drive/folders/113FBkjGeuMGI-JtijCmv2bYAML9CrB11"
+  },
+  {
+    "id": 262,
+    "category": "IA y Machine Learning",
+    "title": "Datos de entrenamiento para el aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1W1I7KcrLHnqB0I_FGzCCDxjcwfLLEsLr"
+  },
+  {
+    "id": 263,
+    "category": "IA y Machine Learning",
+    "title": "Diseñar IA autónoma",
+    "url": "https://drive.google.com/drive/folders/1yLOAun-W7dcW8ggOoYrkGv9GxizUKRoo"
+  },
+  {
+    "id": 264,
+    "category": "IA y Machine Learning",
+    "title": "Diseño de sistemas de aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1LHqZxbhjGBjxsXc1jnEwWNHgCrhbM5F_"
+  },
+  {
+    "id": 265,
+    "category": "IA y Machine Learning",
+    "title": "El Manual de Inteligencia para la Toma de Decisiones",
+    "url": "https://drive.google.com/drive/folders/1fFRvuwBR2mIJwChFq_jCkYBh95M6J3VY"
+  },
+  {
+    "id": 266,
+    "category": "IA y Machine Learning",
+    "title": "El ajuste de cuentas de la resiliencia cibernética",
+    "url": "https://drive.google.com/drive/folders/13RuETbNRE9aoWXUX5NS4icDMDIkTVWzC"
+  },
+  {
+    "id": 267,
+    "category": "IA y Machine Learning",
+    "title": "El camino seguro hacia el desarrollo impulsado por la IA",
+    "url": "https://drive.google.com/drive/folders/1EVJhNu8Nty8YezC_nGL94a5z4IJnlwH3"
+  },
+  {
+    "id": 268,
+    "category": "IA y Machine Learning",
+    "title": "El manual del desarrollador para la seguridad de los modelos de lenguaje de gran tamaño",
+    "url": "https://drive.google.com/drive/folders/1_1Irp_45aCjoYdMpZ7ar4xGm471Yw9Nn"
+  },
+  {
+    "id": 269,
+    "category": "IA y Machine Learning",
+    "title": "Entrevistas sobre aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1WHFXMXP61VAJh7UqtHTs3xH2vBfChTWu"
+  },
+  {
+    "id": 270,
+    "category": "IA y Machine Learning",
+    "title": "Equipos eficaces de aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1pK-Yj2Ht8Xt41UeLNJTX7AAVGggcSsrV"
+  },
+  {
+    "id": 271,
+    "category": "IA y Machine Learning",
+    "title": "Escalar el aprendizaje automático con Spark",
+    "url": "https://drive.google.com/drive/folders/1Ha9S_G14l_wMsAZcQFFJWnyY0RJ6C1BV"
+  },
+  {
+    "id": 272,
+    "category": "IA y Machine Learning",
+    "title": "Estadística asistida por IA para científicos de datos 3rd Edition",
+    "url": "https://drive.google.com/drive/folders/1Rb0E5CZSairr0JMu-ZoIVsZ1qlHRY9xp"
+  },
+  {
+    "id": 273,
+    "category": "IA y Machine Learning",
+    "title": "Estructurado para la inteligencia",
+    "url": "https://drive.google.com/drive/folders/1n-NVpFchSbhbUS_JqJalfmP3Gzeo34Iu"
+  },
+  {
+    "id": 274,
+    "category": "IA y Machine Learning",
+    "title": "Fundamentos de la IA para ejecutivos tecnológicos",
+    "url": "https://drive.google.com/drive/folders/1N2bGTARGF2980h2vb2gCtUWuixG0upya"
+  },
+  {
+    "id": 275,
+    "category": "IA y Machine Learning",
+    "title": "Garantizar la fiabilidad de los datos y la IA a través de la observabilidad",
+    "url": "https://drive.google.com/drive/folders/1cxpdzKI0oIVjvX7N0rDZq-2ifMZbO6u8"
+  },
+  {
+    "id": 276,
+    "category": "IA y Machine Learning",
+    "title": "GenAI en Google Cloud",
+    "url": "https://drive.google.com/drive/folders/1mdg4ZXLiS_LYOTDClyYKyABZpz-W9Jdj"
+  },
+  {
+    "id": 277,
+    "category": "IA y Machine Learning",
+    "title": "Generación Práctica de Datos Sintéticos",
+    "url": "https://drive.google.com/drive/folders/10v6WpVGULPKFTlTOJwiHTNEhzkPVpj--"
+  },
+  {
+    "id": 278,
+    "category": "IA y Machine Learning",
+    "title": "Generación de video con IA",
+    "url": "https://drive.google.com/drive/folders/1s26ST0aM0xNzG3stUn_jdyTv1fbmYfz7"
+  },
+  {
+    "id": 279,
+    "category": "IA y Machine Learning",
+    "title": "Grandes modelos de lenguaje una guía práctica",
+    "url": "https://drive.google.com/drive/folders/1qT1Y-oNDtb2sZ7KkgANvfBxyl5GxRInl"
+  },
+  {
+    "id": 280,
+    "category": "IA y Machine Learning",
+    "title": "Guía práctica para mejorar rápidamente los productos de IA",
+    "url": "https://drive.google.com/drive/folders/1aAaKxrqDhU2lXYadHgbyCGeNuaiSvmWw"
+  },
+  {
+    "id": 281,
+    "category": "IA y Machine Learning",
+    "title": "Habilidades de UX para la estrategia empresarial",
+    "url": "https://drive.google.com/drive/folders/1uJf5bYRMd2NNR9oPoupaLYc_mxLY2Da8"
+  },
+  {
+    "id": 282,
+    "category": "IA y Machine Learning",
+    "title": "IA aplicada al desarrollo Java empresarial",
+    "url": "https://drive.google.com/drive/folders/1kw8bvQWbbiOqmpw7RTsFGKdlMT-gPc41"
+  },
+  {
+    "id": 283,
+    "category": "IA y Machine Learning",
+    "title": "IA de bajo código",
+    "url": "https://drive.google.com/drive/folders/1SMFulDmrgXx1HXfTkZxsC7PpafoIgN3y"
+  },
+  {
+    "id": 284,
+    "category": "IA y Machine Learning",
+    "title": "IA generativa en Azure",
+    "url": "https://drive.google.com/drive/folders/1Mzv17gDGmEuzcbmV15AN1QnVP9iyEAqi"
+  },
+  {
+    "id": 285,
+    "category": "IA y Machine Learning",
+    "title": "IA generativa en Kubernetes",
+    "url": "https://drive.google.com/drive/folders/1N_K7Tbkv7_4mB8xgheh9gKwS1dpbQb0W"
+  },
+  {
+    "id": 286,
+    "category": "IA y Machine Learning",
+    "title": "Ingeniería de Software para Científicos de Datos",
+    "url": "https://drive.google.com/drive/folders/1N1qsp7Int3tYheCp5kOA4oS_9pTItjzr"
+  },
+  {
+    "id": 287,
+    "category": "IA y Machine Learning",
+    "title": "Ingeniería de datos para la IA multimodal",
+    "url": "https://drive.google.com/drive/folders/1LbdMfvzg838va0qcGNcoF4joRJ6WFrIc"
+  },
+  {
+    "id": 288,
+    "category": "IA y Machine Learning",
+    "title": "Ingeniería de prompts para LLMs",
+    "url": "https://drive.google.com/drive/folders/1PYAjjEObDXkLFLLUUKORxcn2_ygwRyLG"
+  },
+  {
+    "id": 289,
+    "category": "IA y Machine Learning",
+    "title": "Ingeniería del rendimiento de sistemas de IA",
+    "url": "https://drive.google.com/drive/folders/1gUn6GSkj8U87ez_FqmHWhXZi3PVqZ4S1"
+  },
+  {
+    "id": 290,
+    "category": "IA y Machine Learning",
+    "title": "Ingeniería del rendimiento web en la era de la IA",
+    "url": "https://drive.google.com/drive/folders/18WjEYphYNPW93uHdcsaNvt6SBTn5U5Rq"
+  },
+  {
+    "id": 291,
+    "category": "IA y Machine Learning",
+    "title": "Inteligencia artificial generativa práctica con transformadores y modelos de difusión",
+    "url": "https://drive.google.com/drive/folders/1VJ3DUdNjm1rIVC8y6xMTkukNpszmmlFW"
+  },
+  {
+    "id": 292,
+    "category": "IA y Machine Learning",
+    "title": "Inteligencia en tiempo real con Microsoft Fabric",
+    "url": "https://drive.google.com/drive/folders/1bBHPwtKRQQP6lcJuDV1c_ingWXim2C8C"
+  },
+  {
+    "id": 293,
+    "category": "IA y Machine Learning",
+    "title": "Introducción al Aprendizaje Automático con Python",
+    "url": "https://drive.google.com/drive/folders/1o3gime_qj0uBAF4WvcQ0I3aqMbpfF-SN"
+  },
+  {
+    "id": 294,
+    "category": "IA y Machine Learning",
+    "title": "Kubeflow para el aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1WdoBowsc27W0OPNkLuMtUxUYjArsjvyS"
+  },
+  {
+    "id": 295,
+    "category": "IA y Machine Learning",
+    "title": "La empresa componible impulsada por la IA",
+    "url": "https://drive.google.com/drive/folders/1F_DAPpPLRTva4X80h3OGkD8TwjMTY-Pr"
+  },
+  {
+    "id": 296,
+    "category": "IA y Machine Learning",
+    "title": "La empresa con IA agentiva",
+    "url": "https://drive.google.com/drive/folders/1Fr-2RyWv7WU96WM_qRGWRfAsDjcLuu9q"
+  },
+  {
+    "id": 297,
+    "category": "IA y Machine Learning",
+    "title": "La guía del ingeniero de IA para sobrevivir a la Ley de IA de la UE",
+    "url": "https://drive.google.com/drive/folders/1sxZ7Ds1bAnIGZ9siNjvc-NEp3GaoQC6Y"
+  },
+  {
+    "id": 298,
+    "category": "IA y Machine Learning",
+    "title": "Libro de cocina de la concurrencia en C\\# 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1QMFP1IUeE0buRBwGvcuNExl2hGXnxJiI"
+  },
+  {
+    "id": 299,
+    "category": "IA y Machine Learning",
+    "title": "Libro de recetas de RAG con Python",
+    "url": "https://drive.google.com/drive/folders/1StFK7WUBnKQaQ7MRZz4tHqcbh0mLDQ0E"
+  },
+  {
+    "id": 300,
+    "category": "IA y Machine Learning",
+    "title": "Malla agentica",
+    "url": "https://drive.google.com/drive/folders/1t7AA_yaJPZaWAx2QwPNVwdHC96u-fHv5"
+  },
+  {
+    "id": 301,
+    "category": "IA y Machine Learning",
+    "title": "Migración a la nube y preparación para la IA",
+    "url": "https://drive.google.com/drive/folders/1w0hJwdrQuxlnqseR9gN3rtTIUApq7o5J"
+  },
+  {
+    "id": 302,
+    "category": "IA y Machine Learning",
+    "title": "ML y IA generativa en el Data Lakehouse",
+    "url": "https://drive.google.com/drive/folders/1yfxsILG5UrUk7Qj_tZHyLFfNrxmu-hCK"
+  },
+  {
+    "id": 303,
+    "category": "IA y Machine Learning",
+    "title": "Modelos de lenguaje grandes las partes difíciles",
+    "url": "https://drive.google.com/drive/folders/1D0wl_5y8tEFK7VSIuYKdr6d-GRTiFB7E"
+  },
+  {
+    "id": 304,
+    "category": "IA y Machine Learning",
+    "title": "Modelos de lenguaje visual",
+    "url": "https://drive.google.com/drive/folders/13G0NbSwf1a4kjZRHP8nXa_5eZAqARTqy"
+  },
+  {
+    "id": 305,
+    "category": "IA y Machine Learning",
+    "title": "Modernización de la infraestructura básica para aplicaciones SaaS preparadas para la IA",
+    "url": "https://drive.google.com/drive/folders/1_PLlls56kQdyHFN0BWFDV_efNoMi7352"
+  },
+  {
+    "id": 306,
+    "category": "IA y Machine Learning",
+    "title": "Más allá de la codificación Vibe",
+    "url": "https://drive.google.com/drive/folders/1rRbpSJQcn00RmAYuukLo1NRUItNV19cx"
+  },
+  {
+    "id": 307,
+    "category": "IA y Machine Learning",
+    "title": "Patrones de diseño de IA generativa",
+    "url": "https://drive.google.com/drive/folders/1c2dVQf9U14yyHurTQOgAhSNso8Dcp9EJ"
+  },
+  {
+    "id": 308,
+    "category": "IA y Machine Learning",
+    "title": "Planes de Aprendizaje Automático y Ciencia de Datos para Finanzas",
+    "url": "https://drive.google.com/drive/folders/1XmSdW7fnFp0xvyqnLiRcBib3YjI0rBLv"
+  },
+  {
+    "id": 309,
+    "category": "IA y Machine Learning",
+    "title": "Planes de datos preparados para la IA",
+    "url": "https://drive.google.com/drive/folders/1Mh7AlZUfAfBOnQe1hx5UlLebPAT1aKwn"
+  },
+  {
+    "id": 310,
+    "category": "IA y Machine Learning",
+    "title": "Planos para el análisis de textos con Python",
+    "url": "https://drive.google.com/drive/folders/1MFZR1k9D4ZlGXESjvP2utEcKeY40YJmE"
+  },
+  {
+    "id": 311,
+    "category": "IA y Machine Learning",
+    "title": "Privacidad y seguridad para modelos de lenguaje grandes",
+    "url": "https://drive.google.com/drive/folders/1TZNT0f6XC3RP7yTRHNz9fPg833tO2ZKg"
+  },
+  {
+    "id": 312,
+    "category": "IA y Machine Learning",
+    "title": "Prácticas de implementación y optimización de LLM",
+    "url": "https://drive.google.com/drive/folders/1c29RyTXh-BvqkDEZxI3v4BzhglsJYHdQ"
+  },
+  {
+    "id": 313,
+    "category": "IA y Machine Learning",
+    "title": "Programación C\\# 10",
+    "url": "https://drive.google.com/drive/folders/1V4ckYq7PoOEGLUuUJsR-Q5dLp0FU9dET"
+  },
+  {
+    "id": 314,
+    "category": "IA y Machine Learning",
+    "title": "Programación asistida por IA",
+    "url": "https://drive.google.com/drive/folders/1RZ0i8csUgyyydvC7YBsFlEIwLhmTcuug"
+  },
+  {
+    "id": 315,
+    "category": "IA y Machine Learning",
+    "title": "Programación de PyTorch para Aprendizaje Profundo",
+    "url": "https://drive.google.com/drive/folders/17f96oqo8uXIVFPaJxUjbAtVqudvElFlI"
+  },
+  {
+    "id": 316,
+    "category": "IA y Machine Learning",
+    "title": "Rayo de aprendizaje",
+    "url": "https://drive.google.com/drive/folders/1E24YyLOcRtCXLtXXVJNjfAMSZYwtqxUB"
+  },
+  {
+    "id": 317,
+    "category": "IA y Machine Learning",
+    "title": "Referencia de bolsillo de C\\# 12",
+    "url": "https://drive.google.com/drive/folders/1dCxE30NEoGdxd1evQuKfT8PaXwuw9lPv"
+  },
+  {
+    "id": 318,
+    "category": "IA y Machine Learning",
+    "title": "Referencia de bolsillo de PyTorch",
+    "url": "https://drive.google.com/drive/folders/1x9ZPfeyIZSHKK24_DKy_nLHS0t56H--W"
+  },
+  {
+    "id": 319,
+    "category": "IA y Machine Learning",
+    "title": "Referencia de bolsillo sobre aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1bK9cFj_K1WOdiidYtld_mSJx2_GDx9FY"
+  },
+  {
+    "id": 320,
+    "category": "IA y Machine Learning",
+    "title": "Sistemas de producción de aprendizaje automático",
+    "url": "https://drive.google.com/drive/folders/1uZ6M2lKOtTY0YyMmN30ECQ8RRNgXz3qI"
+  },
+  {
+    "id": 321,
+    "category": "IA y Machine Learning",
+    "title": "Transformers La guía definitiva",
+    "url": "https://drive.google.com/drive/folders/1QLRhHw_t9njbXWv08YrdGF_hJLCPOFbf"
+  },
+  {
+    "id": 322,
+    "category": "IA y Machine Learning",
+    "title": "Una guía ilustrada de los agentes de IA",
+    "url": "https://drive.google.com/drive/folders/1L-C_mI8dWqYpMsQxrTxQinnDGWa7rZ8B"
+  },
+  {
+    "id": 323,
+    "category": "Negocio y Liderazgo",
+    "title": "Asciende como líder técnico",
+    "url": "https://drive.google.com/drive/folders/1VdtZgM0d0n0bBYDD1nBGvrfrDaCosf_F"
+  },
+  {
+    "id": 324,
+    "category": "Negocio y Liderazgo",
+    "title": "Emprender con (más) éxito 30 herramientas para validar tu idea en 5 días",
+    "url": "https://drive.google.com/drive/folders/10een4lktJ4uuvfW2ds-eTS3jN2Kwy29-"
+  },
+  {
+    "id": 325,
+    "category": "Negocio y Liderazgo",
+    "title": "Manual profesional del desarrollador de software",
+    "url": "https://drive.google.com/drive/folders/1xTSMFlJRUU75EA_aOu_KGZDULKel_GH8"
+  },
+  {
+    "id": 326,
+    "category": "Otros",
+    "title": "Dominar el brillo",
+    "url": "https://drive.google.com/drive/folders/1zaBuJ67zUeYGJHgP1KgDJf5Afi6Ff-Um"
+  },
+  {
+    "id": 327,
+    "category": "Otros",
+    "title": "Greguerías liberales",
+    "url": "https://drive.google.com/drive/folders/1SV0ANYSh0btyU-uC_N1aWcY9VmtulGkO"
+  },
+  {
+    "id": 328,
+    "category": "Otros",
+    "title": "Primero ordenado",
+    "url": "https://drive.google.com/drive/folders/1-41lhcsOefaWfpHr4eKmdP6lWfhb-Arq"
+  },
+  {
+    "id": 329,
+    "category": "Otros",
+    "title": "Traducción y paratraducción",
+    "url": "https://drive.google.com/drive/folders/12Ti5oUJ7AoTG9A8hdCQgt69gXG2_M7OU"
+  },
+  {
+    "id": 330,
+    "category": "Programación y Lenguajes",
+    "title": "Aprender C++ moderno para finanzas",
+    "url": "https://drive.google.com/drive/folders/1r9SO2DVU_QENXKlf0BLDHINuR4zNHvZD"
+  },
+  {
+    "id": 331,
+    "category": "Programación y Lenguajes",
+    "title": "Aprender Java 6ª Edición",
+    "url": "https://drive.google.com/drive/folders/1geGDuVQc_gmeJDkAWAbioG8FLC0dcmRv"
+  },
+  {
+    "id": 332,
+    "category": "Programación y Lenguajes",
+    "title": "Aprender Perl 8ª Edición",
+    "url": "https://drive.google.com/drive/folders/1ez39fmGsDdpY0tuqfCSfvCqCnHUJPy5n"
+  },
+  {
+    "id": 333,
+    "category": "Programación y Lenguajes",
+    "title": "Aprender Python 6.ª edición",
+    "url": "https://drive.google.com/drive/folders/1Y0Olw7jbcXDc99bh5rEqysn_Rl72AWzU"
+  },
+  {
+    "id": 334,
+    "category": "Programación y Lenguajes",
+    "title": "Aprender el desarrollo basado en pruebas",
+    "url": "https://drive.google.com/drive/folders/1084MrWVgtvml_Um7FLpYkE0Fg-QoigxC"
+  },
+  {
+    "id": 335,
+    "category": "Programación y Lenguajes",
+    "title": "Aprender programación funcional",
+    "url": "https://drive.google.com/drive/folders/1HrK5qvCl2TRw6lLOxZh6tmwaHC0mhnQz"
+  },
+  {
+    "id": 336,
+    "category": "Programación y Lenguajes",
+    "title": "C del siglo XXI 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1n0Az-QejqJVKEl9vUx8ck9pWR7DuN1-A"
+  },
+  {
+    "id": 337,
+    "category": "Programación y Lenguajes",
+    "title": "C\\# 10 en pocas palabras",
+    "url": "https://drive.google.com/drive/folders/1IRO4TpeeOPQpTq0oi8leQkVCZxk2-IPC"
+  },
+  {
+    "id": 338,
+    "category": "Programación y Lenguajes",
+    "title": "C\\# 8.0 en pocas palabras",
+    "url": "https://drive.google.com/drive/folders/1ae2DhI6INh5Bi4s2eUarAhO8fxRoJssH"
+  },
+  {
+    "id": 339,
+    "category": "Programación y Lenguajes",
+    "title": "Diseño de software en C",
+    "url": "https://drive.google.com/drive/folders/1lTT6bLfPxFS0TvbUAiJNGdpd7jBOFqOD"
+  },
+  {
+    "id": 340,
+    "category": "Programación y Lenguajes",
+    "title": "Dominar Python para Bioinformática",
+    "url": "https://drive.google.com/drive/folders/1mBgdDUJnTrmlo3DwMYGREZ5sPlKWDrLQ"
+  },
+  {
+    "id": 341,
+    "category": "Programación y Lenguajes",
+    "title": "El código de la escritura",
+    "url": "https://drive.google.com/drive/folders/1dhU--Uzk3raKfEUfJlYwP9kDEZIJkXSV"
+  },
+  {
+    "id": 342,
+    "category": "Programación y Lenguajes",
+    "title": "Escalando Python con Dask",
+    "url": "https://drive.google.com/drive/folders/1lLbouuC3j6FphdF791AjFJd8kEh0wxDv"
+  },
+  {
+    "id": 343,
+    "category": "Programación y Lenguajes",
+    "title": "Escalando Python con Ray",
+    "url": "https://drive.google.com/drive/folders/1s3eKnJlZOXRIrUgi9Lo5kvJ2wamvqCMB"
+  },
+  {
+    "id": 344,
+    "category": "Programación y Lenguajes",
+    "title": "Fundamentos de la ingeniería de software",
+    "url": "https://drive.google.com/drive/folders/11JAgtC1REYuqfh8NYDxp-89mFkCsku2G"
+  },
+  {
+    "id": 345,
+    "category": "Programación y Lenguajes",
+    "title": "Ingeniería de software en Google",
+    "url": "https://drive.google.com/drive/folders/1dLa5CyCWb2frkqww4Cb2L6Hzas4SzPPS"
+  },
+  {
+    "id": 346,
+    "category": "Programación y Lenguajes",
+    "title": "Ingeniería de software responsable",
+    "url": "https://drive.google.com/drive/folders/12KCsksoJwlKq8Adty2syUfC5R9k88LFn"
+  },
+  {
+    "id": 347,
+    "category": "Programación y Lenguajes",
+    "title": "Introducción a C++",
+    "url": "https://drive.google.com/drive/folders/121rw8ANaPtcvyRg-s2sR6G4Qfg8QHl0M"
+  },
+  {
+    "id": 348,
+    "category": "Programación y Lenguajes",
+    "title": "Ir al libro de cocina",
+    "url": "https://drive.google.com/drive/folders/1ANeuZO0X_asAlaoi2ybCNFpZi5_b0qTP"
+  },
+  {
+    "id": 349,
+    "category": "Programación y Lenguajes",
+    "title": "Java Generics and Collections 2.ª edición",
+    "url": "https://drive.google.com/drive/folders/1UA_ZAZz-uhDTOcE_V62NJvsD4fywCEPh"
+  },
+  {
+    "id": 350,
+    "category": "Programación y Lenguajes",
+    "title": "Java en pocas palabras 9th Edition",
+    "url": "https://drive.google.com/drive/folders/1jRDs3gF--Op7doVrIg3cLjh1xQIy0sEP"
+  },
+  {
+    "id": 351,
+    "category": "Programación y Lenguajes",
+    "title": "La guía del autoestopista Python",
+    "url": "https://drive.google.com/drive/folders/1DUIKaROngSl_GIImVFbLnf1F4u8nyAwE"
+  },
+  {
+    "id": 352,
+    "category": "Programación y Lenguajes",
+    "title": "Liderazgo en ingeniería las partes difíciles",
+    "url": "https://drive.google.com/drive/folders/1OvGW3efTOa9OGELskism8K4bQ1AcLYOV"
+  },
+  {
+    "id": 353,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina Arduino 3ª edición",
+    "url": "https://drive.google.com/drive/folders/1ZBXXdQ8C8fVpRjX6kPzFNG25KPdZ4x1K"
+  },
+  {
+    "id": 354,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina Quarkus",
+    "url": "https://drive.google.com/drive/folders/1cZ_44DMClYfYXFZ61RGK1EYns5K6YM0x"
+  },
+  {
+    "id": 355,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina de Java 4ª edición",
+    "url": "https://drive.google.com/drive/folders/1LTZJ64_LRMwkezrYtwtJ3o4l8MgN3HLm"
+  },
+  {
+    "id": 356,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina de Java 5.ª edición",
+    "url": "https://drive.google.com/drive/folders/1YHZSQfrHueKRqIvPL8QCGrrN5FQxNYPM"
+  },
+  {
+    "id": 357,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina de aleteo y dardo",
+    "url": "https://drive.google.com/drive/folders/1-baTFRgaT2t3p_rL-1SMwN6NcbPENqQO"
+  },
+  {
+    "id": 358,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina de código limpio",
+    "url": "https://drive.google.com/drive/folders/1-y59Fu7B2A2PkiUL_Jqi3TmB8Tu7aokp"
+  },
+  {
+    "id": 359,
+    "category": "Programación y Lenguajes",
+    "title": "Libro de cocina de electrónica",
+    "url": "https://drive.google.com/drive/folders/1IPeM-7uIh9aID29WoV6_zWS8obRb7iV8"
+  },
+  {
+    "id": 360,
+    "category": "Programación y Lenguajes",
+    "title": "Optimizar Java",
+    "url": "https://drive.google.com/drive/folders/1ywyc5cpLZiPp0VQnwIOUjrcoIC0_972U"
+  },
+  {
+    "id": 361,
+    "category": "Programación y Lenguajes",
+    "title": "Óxido Atómico y Cerraduras",
+    "url": "https://drive.google.com/drive/folders/1NLxbOd8IS3n8KOf09MLmweSd_nIWmWxT"
+  },
+  {
+    "id": 362,
+    "category": "Programación y Lenguajes",
+    "title": "Presentación de Go",
+    "url": "https://drive.google.com/drive/folders/17yJZdyUuCtIPqt71JMbpfEerlNumJUr4"
+  },
+  {
+    "id": 363,
+    "category": "Programación y Lenguajes",
+    "title": "Programación PHP 4ª Edición",
+    "url": "https://drive.google.com/drive/folders/1Yxw9UsYo3Y3WmcVUfJnG9RQYnq1W9VH8"
+  },
+  {
+    "id": 364,
+    "category": "Programación y Lenguajes",
+    "title": "Programando Scala 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/141Slr_Jd3GZxMvRW82MDT5QTOri3IE7Q"
+  },
+  {
+    "id": 365,
+    "category": "Programación y Lenguajes",
+    "title": "Programar Android con Kotlin",
+    "url": "https://drive.google.com/drive/folders/1szRi8WizdZTlR_zB81lXGXkCMAWdIcWU"
+  },
+  {
+    "id": 366,
+    "category": "Programación y Lenguajes",
+    "title": "Programar iOS 14",
+    "url": "https://drive.google.com/drive/folders/16YSWDAw7gMt-CZsmVtPc4TPzkITMet2h"
+  },
+  {
+    "id": 367,
+    "category": "Programación y Lenguajes",
+    "title": "Pruebas Full Stack 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/181f0RZ3xoz6VNT0HHiykcDlNRfuV6m4L"
+  },
+  {
+    "id": 368,
+    "category": "Programación y Lenguajes",
+    "title": "Python de alto rendimiento 3.ª edición",
+    "url": "https://drive.google.com/drive/folders/1_MapYUcTALMqEkdaMp7ziDplBz-uYOt4"
+  },
+  {
+    "id": 369,
+    "category": "Programación y Lenguajes",
+    "title": "Python en una cáscara de nuez 4ª edición",
+    "url": "https://drive.google.com/drive/folders/18FuqpyJrXHYrLFGmM2lbyLGy5NvOQ78O"
+  },
+  {
+    "id": 370,
+    "category": "Programación y Lenguajes",
+    "title": "Python para Excel 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1kiLY3Y0Nwt3sVRQo2BivZ1whWMAaa25Y"
+  },
+  {
+    "id": 371,
+    "category": "Programación y Lenguajes",
+    "title": "Python Polars la guía definitiva",
+    "url": "https://drive.google.com/drive/folders/1V1MXskceSRKEfUJsYMkQgINkfzrad1Av"
+  },
+  {
+    "id": 372,
+    "category": "Programación y Lenguajes",
+    "title": "R Graphics Cookbook 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1CUua2gaE2ypfsiiA1bOfxLj_hiFjDjM_"
+  },
+  {
+    "id": 373,
+    "category": "Programación y Lenguajes",
+    "title": "Scala Cookbook 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1VDeQtvvvaoF7TWUc52DLBgVVeCqmukzR"
+  },
+  {
+    "id": 374,
+    "category": "Programación y Lenguajes",
+    "title": "Software ecológico para la construcción",
+    "url": "https://drive.google.com/drive/folders/1O7YqbMiENT4JCYvyotT8fcqpcMMFe04m"
+  },
+  {
+    "id": 375,
+    "category": "Programación y Lenguajes",
+    "title": "Unificar la empresa los datos y el código",
+    "url": "https://drive.google.com/drive/folders/1tLrXPHzz3iXMgHdYFwYIZCRaDhTPMCq7"
+  },
+  {
+    "id": 376,
+    "category": "Programación y Lenguajes",
+    "title": "Web Scraping con Python 3.ª edición",
+    "url": "https://drive.google.com/drive/folders/1cSRq_tWGw_KIePQxQ4ELGaWblSZ7jbdU"
+  },
+  {
+    "id": 377,
+    "category": "Redes",
+    "title": "Aprender CoreDNS",
+    "url": "https://drive.google.com/drive/folders/1CgiGekieW-ZHVY5U4JMzCVMLb9LyWHdJ"
+  },
+  {
+    "id": 378,
+    "category": "Redes",
+    "title": "Asterisco La Guía Definitiva 5ª Edición",
+    "url": "https://drive.google.com/drive/folders/1VEAWGHdy_c6tAWCOynTLKwreOsjvZyYS"
+  },
+  {
+    "id": 379,
+    "category": "Redes",
+    "title": "Guerrero de Arista 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1_lHKNUn6bX0046yQes_yrYWXOlgFlZt7"
+  },
+  {
+    "id": 380,
+    "category": "Redes",
+    "title": "Guía de paquetes de protocolos de redes centrales",
+    "url": "https://drive.google.com/drive/folders/17Q9_Mcq3Fq9IXSdjIHbLG6VK2WmnFUlr"
+  },
+  {
+    "id": 381,
+    "category": "Redes",
+    "title": "Juniper Serie MX 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/11gv64JBWHlXzr3PA-eswto6I06UeXZ49"
+  },
+  {
+    "id": 382,
+    "category": "Redes",
+    "title": "NGINX Cookbook 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/1b-dHB9DYm_pOGpceeMfdHfaWmO-HN1z8"
+  },
+  {
+    "id": 383,
+    "category": "Redes",
+    "title": "Programabilidad y Automatización de Redes 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1OzJ4_JeR923jnHFLh2lHHKpB2huKZ08a"
+  },
+  {
+    "id": 384,
+    "category": "Redes",
+    "title": "Programabilidad y automatización de la red",
+    "url": "https://drive.google.com/drive/folders/1osFgwl42FiIrVal0vNtj8xpw1ykhqZgQ"
+  },
+  {
+    "id": 385,
+    "category": "Redes",
+    "title": "Redes de Navegadores de Alto Rendimiento",
+    "url": "https://drive.google.com/drive/folders/1ILPnDfqRISx3FlEchrT9rydkZ_qpQi_h"
+  },
+  {
+    "id": 386,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprende los fundamentos de la ciberseguridad",
+    "url": "https://drive.google.com/drive/folders/14V3Tj7YA8xWAGS5f7VaYVPHz3ge01KCm"
+  },
+  {
+    "id": 387,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprende sobre la seguridad en la nube",
+    "url": "https://drive.google.com/drive/folders/1cwWPmzuAw-NFeYGb3nPFrUJqzbXLxdBT"
+  },
+  {
+    "id": 388,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprender DevSecOps",
+    "url": "https://drive.google.com/drive/folders/1dwgn_KSUgx7ArHX3jFzFwpWZ_yNi_nbu"
+  },
+  {
+    "id": 389,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprender Identidad Digital",
+    "url": "https://drive.google.com/drive/folders/1yOq00HBkeMV7FFv9QkxVofKVyF2bLLPt"
+  },
+  {
+    "id": 390,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprendiendo Kali Linux 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1rK9JcW6cUw7IF_kj-yC_12TYUUCeHsar"
+  },
+  {
+    "id": 391,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprendizaje Respuesta y recuperación ante el ransomware",
+    "url": "https://drive.google.com/drive/folders/152JwP_PErLSTK0z7fJMIsTWBVC2liQ7g"
+  },
+  {
+    "id": 392,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Aprendizaje de la seguridad sin servidor",
+    "url": "https://drive.google.com/drive/folders/1jHw6CRY6kGF6DSVmt4wCn9MggE6amAdC"
+  },
+  {
+    "id": 393,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Arquitectura de seguridad para la nube híbrida",
+    "url": "https://drive.google.com/drive/folders/1_a7GsyoDGEAaCGeX1uXpeCi0sOv2PXNK"
+  },
+  {
+    "id": 394,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Construir sistemas seguros y fiables",
+    "url": "https://drive.google.com/drive/folders/1rCNr92rw36BG3wjGlPs4-vbCtEtM3UvD"
+  },
+  {
+    "id": 395,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Crear un programa de gestión de riesgos cibernéticos",
+    "url": "https://drive.google.com/drive/folders/14C4LUzlGbkraQYqjQC3SHyjSNnxUL_y3"
+  },
+  {
+    "id": 396,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Dentro de la ciberguerra 3.ª edición",
+    "url": "https://drive.google.com/drive/folders/1QLtZlpDScoPlnnZGBfTDDC8kqUXu9Rt7"
+  },
+  {
+    "id": 397,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Gestión de la superficie de ataque",
+    "url": "https://drive.google.com/drive/folders/1zAGR3qBHO0h8uwGM82ktYBXFupiEQDE7"
+  },
+  {
+    "id": 398,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Gestión de riesgos internos",
+    "url": "https://drive.google.com/drive/folders/1pB3ABFRP_URFH1nl30VvY-amsUfN4dzw"
+  },
+  {
+    "id": 399,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Ingeniería del caos de la seguridad",
+    "url": "https://drive.google.com/drive/folders/1w1RMHCEpaR74RlJvhpVnqwlNfqBtcMBp"
+  },
+  {
+    "id": 400,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Manual de seguridad defensiva 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1agqzKirgoa-8cL5Bgp2Nw7gvlY8c3ftV"
+  },
+  {
+    "id": 401,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Manual del Equipo Azul SOC SIEM y búsqueda de amenazas",
+    "url": "https://drive.google.com/drive/folders/1c9iKDnxSSMm8aLEwMHxB-DQ6jyZw4dKL"
+  },
+  {
+    "id": 402,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Manual del equipo azul respuesta ante incidentes",
+    "url": "https://drive.google.com/drive/folders/1dcDZiwxIpTy99Ol0DLOVuWXELjaL8ESA"
+  },
+  {
+    "id": 403,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Pasar de la gestión de vulnerabilidades a la gestión de la exposición",
+    "url": "https://drive.google.com/drive/folders/1PgEZERU3gxL48ORnpZ8Xp7_CaEZj_ei1"
+  },
+  {
+    "id": 404,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Planes de seguridad de datos",
+    "url": "https://drive.google.com/drive/folders/11wl4l1XBZ16G9q-sH83ru67IHAI5pBXE"
+  },
+  {
+    "id": 405,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Plataformas de protección de aplicaciones nativas en la nube",
+    "url": "https://drive.google.com/drive/folders/1AlVq7F1xHrgeBLj8MeMOMF1x1IWQdK31"
+  },
+  {
+    "id": 406,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Privacidad práctica de los datos",
+    "url": "https://drive.google.com/drive/folders/1gg98iwus-A4jJfoH8y1piVOB150xNXuW"
+  },
+  {
+    "id": 407,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Protección de datos moderna",
+    "url": "https://drive.google.com/drive/folders/1ZpBPVpN8j1bsX-1VXkyxVbkkuPpbKRNJ"
+  },
+  {
+    "id": 408,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Ransomware y extorsión de datos",
+    "url": "https://drive.google.com/drive/folders/10F1xS8dzBKu3IAoua9BZ-eP-q4bFngWT"
+  },
+  {
+    "id": 409,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Redes de Confianza Cero",
+    "url": "https://drive.google.com/drive/folders/1gVYLKRArNPJ5w8-TEB9HTsaaPnQMSxbz"
+  },
+  {
+    "id": 410,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Redes de Confianza Cero 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1u1a0yIbAN2rzTvSVu4_0kERV02S-Jw02"
+  },
+  {
+    "id": 411,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Respuesta a Incidentes Basada en Inteligencia 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1Z2oAppy6ysLJRXX03gmJCW_Xlccw9rdi"
+  },
+  {
+    "id": 412,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad de datos nativa en la nube con OAuth",
+    "url": "https://drive.google.com/drive/folders/17k7XAPYFz3QGDB8aVhQgqjycAOtXH6op"
+  },
+  {
+    "id": 413,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad de las aplicaciones web",
+    "url": "https://drive.google.com/drive/folders/1V_ilcyLsLh1onjX0hst5pHLLr7CGaWNN"
+  },
+  {
+    "id": 414,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad de los contenedores 2nd Edition",
+    "url": "https://drive.google.com/drive/folders/1wOVH8vpyiEuFvkbEvn7B9naPzDc-u3Gr"
+  },
+  {
+    "id": 415,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad práctica en la nube 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1_lhGms1Q3Yfby7FO1Gn8MdqsQN6feADo"
+  },
+  {
+    "id": 416,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad de la cadena de suministro de software",
+    "url": "https://drive.google.com/drive/folders/1YoOTBvmm2kYh8BdgjFOExFhKSIQVKSib"
+  },
+  {
+    "id": 417,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad y arquitectura de microservicios en AWS",
+    "url": "https://drive.google.com/drive/folders/16g0jLAs2QLMpgxNmpMQF7Wx8txx0MOiN"
+  },
+  {
+    "id": 418,
+    "category": "Seguridad y Ciberseguridad",
+    "title": "Seguridad y observabilidad de Kubernetes",
+    "url": "https://drive.google.com/drive/folders/1zx_PYRD4RBITt2B7OC4qhK17OHey8HKA"
+  },
+  {
+    "id": 419,
+    "category": "UX Diseño y Producto",
+    "title": "Diseño de interfaces 3ª edición",
+    "url": "https://drive.google.com/drive/folders/19PbR5JEIM_0Rafqbb6nFLa6lf2Rw3Icd"
+  },
+  {
+    "id": 420,
+    "category": "UX Diseño y Producto",
+    "title": "Diseño de interfaces de IA",
+    "url": "https://drive.google.com/drive/folders/1hHXsf1WuEvNLbXgrBdNeDfhfgR_gJIar"
+  },
+  {
+    "id": 421,
+    "category": "UX Diseño y Producto",
+    "title": "El ingeniero con mentalidad de producto",
+    "url": "https://drive.google.com/drive/folders/1v6TOI5ztwGB2nnGSns5XweDGCvPPHNey"
+  },
+  {
+    "id": 422,
+    "category": "UX Diseño y Producto",
+    "title": "Lean UX 3ª Edición",
+    "url": "https://drive.google.com/drive/folders/10Kg_3za_qYu6V7nuJ0Wf12MK0seJE5vB"
+  },
+  {
+    "id": 423,
+    "category": "UX Diseño y Producto",
+    "title": "Mapeo de experiencias 3rd Edition",
+    "url": "https://drive.google.com/drive/folders/1e06ffrIrFvkPuwif9BF4iOFW1qYbk48V"
+  },
+  {
+    "id": 424,
+    "category": "Web y Frontend",
+    "title": "Aprender GraphQL",
+    "url": "https://drive.google.com/drive/folders/1NYPxuN92dCUyp-pEpy1Csr_iK-igUEXK"
+  },
+  {
+    "id": 425,
+    "category": "Web y Frontend",
+    "title": "Aprendiendo React 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/11PiJeEk6lzhftv9X4-PtFN8mC6xQrcO1"
+  },
+  {
+    "id": 426,
+    "category": "Web y Frontend",
+    "title": "Creación de aplicaciones web con Bolt",
+    "url": "https://drive.google.com/drive/folders/1ng0mB6U0VoG9vf24yeCjikLLeijoMmTr"
+  },
+  {
+    "id": 427,
+    "category": "Web y Frontend",
+    "title": "Creación de aplicaciones web con WordPress 2ª edición",
+    "url": "https://drive.google.com/drive/folders/1S6HFjIxs_w9mQLAVzOxnl3Oqwx2pkPDF"
+  },
+  {
+    "id": 428,
+    "category": "Web y Frontend",
+    "title": "Desarrollo Web con Node y Express 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1qxESd6-7TYJl6-E9Wi3r8iw5Y1VnuB-i"
+  },
+  {
+    "id": 429,
+    "category": "Web y Frontend",
+    "title": "JavaScript La Guía Definitiva 7ª Edición",
+    "url": "https://drive.google.com/drive/folders/1Dv281BR9LplU2dfjq-WCyHDUV4sJo8iN"
+  },
+  {
+    "id": 430,
+    "category": "Web y Frontend",
+    "title": "Libro de cocina React",
+    "url": "https://drive.google.com/drive/folders/17nM0dgBYp2bdC0v8QIqWml575PbbMDCw"
+  },
+  {
+    "id": 431,
+    "category": "Web y Frontend",
+    "title": "Programación Reactiva con RxJava",
+    "url": "https://drive.google.com/drive/folders/1FBwhYtHuRzXanLEBVM2rCoMxs2uQu0WA"
+  },
+  {
+    "id": 432,
+    "category": "Web y Frontend",
+    "title": "React Up & Running 2ª Edición",
+    "url": "https://drive.google.com/drive/folders/1m1LvKlFjBo5DXH9ZQ8k1OJLtyyQlpbPS"
+  },
+  {
+    "id": 433,
+    "category": "Web y Frontend",
+    "title": "Recetario de accesibilidad web",
+    "url": "https://drive.google.com/drive/folders/1XXKQfwjEMboHh00ilplm-JQl5ExPEAZv"
+  },
+  {
+    "id": 434,
+    "category": "Web y Frontend",
+    "title": "WebAssembly La Guía Definitiva",
+    "url": "https://drive.google.com/drive/folders/1yicWQDt9C7w8-7meotbWhqKd0_xrTNZq"
+  }
+]
